@@ -1,0 +1,713 @@
+<div class="col-3 mt-4">
+    <div>
+
+        <!-- ERP -->
+        <span class="erpText">
+
+            <!-- For Key -->
+            {{checkKey('erp_id',0) == true ? displayValue('erp_id'):
+            checkKey('id',0) ==
+            true ? displayValue('id') :
+            checkKey('digitally_signed',0) == true ?
+            displayValue('digitally_signed') :
+            checkKey('invoice_no',0) == true ?
+            displayValue('invoice_no') : checkKey('date',0) == true ?
+            displayValue('date') :
+            checkKey('operating_circle',0) ==
+            true ? displayValue('operating_circle') : checkKey('supplier_name',0) ==
+            true ?
+            displayValue('supplier_name') :
+            checkKey('receipt_number',0) == true ? displayValue('receipt_number') :
+            checkKey('po_number',0) == true ? displayValue('po_number')
+            : checkKey('received_date',0) == true ? displayValue('received_date') :
+            checkKey('uploaded_date',0) ==
+            true ? displayValue('uploaded_date') : checkKey('expiring_date',0) ==
+            true ?
+            displayValue('expiring_date')
+            : checkKey('label',0) == true ? displayValue('label') : data.erp_id ?
+            'ERP
+            ID' :
+            ''}}
+
+            <!-- For Value -->
+            {{checkKey('erp_id',0) == true ? data.erp_id : checkKey('id',0) == true
+            ?
+            data.id :
+            checkKey('digitally_signed',0) == true ? (data.digitally_signed == true
+            ?
+            'Digitally Signed' : '') :
+            checkKey('invoice_no',0) == true ?
+            data.invoice_no: checkKey('date',0) == true ? (data.date | date) :
+            checkKey('operating_circle',0) ==
+            true ? data.operating_circle : checkKey('supplier_name',0) == true ?
+            data.supplier_name :
+            checkKey('receipt_number',0) == true ? data.receipt_number :
+            checkKey('po_number',0) == true ? data.po_number
+            : checkKey('received_date',0) == true ? (data.received_date | date) :
+            checkKey('uploaded_date',0) ==
+            true ? (data.uploaded_date | date) : checkKey('expiring_date',0) == true
+            ?
+            (data.expiring_date | date)
+            : checkKey('label',0) == true ? data.label : data.erp_id}}
+
+
+        </span>
+        <!-- ERP -->
+
+        <span class="ellipsecss"></span>
+        &nbsp;
+        <!-- ID -->
+        <span>
+            <!-- For Key -->
+            {{checkKey('erp_id',1) == true ? displayValue('erp_id') :
+            checkKey('id',1)
+            ==
+            true ?
+            displayValue('id') :
+            checkKey('digitally_signed',1) == true ?
+            displayValue('digitally_signed') :
+            checkKey('invoice_no',1) == true ?
+            displayValue('invoice_no') : checkKey('date',1) == true ?
+            displayValue('date') :
+            checkKey('operating_circle',1) ==
+            true ? displayValue('operating_circle') : checkKey('supplier_name',1) ==
+            true ?
+            displayValue('supplier_name') :
+            checkKey('receipt_number',1) == true ? displayValue('receipt_number') :
+            checkKey('po_number',1) == true ? displayValue('po_number')
+            : checkKey('received_date',1) == true ? displayValue('received_date') :
+            checkKey('uploaded_date',1) ==
+            true ? displayValue('uploaded_date') : checkKey('expiring_date',1) ==
+            true ?
+            displayValue('expiring_date')
+            : checkKey('label',1) == true ? displayValue('label') : data.id ? 'ID' :
+            ''}}
+
+            <!-- For Value -->
+            {{checkKey('erp_id',1) == true ? data.erp_id : checkKey('id',1) == true
+            ?
+            data.id :
+            checkKey('digitally_signed',1) == true ? (data.digitally_signed == true
+            ?
+            'Digitally
+            Signed' : '') :
+            checkKey('invoice_no',1) == true ?
+            data.invoice_no: checkKey('date',1) == true ? (data.date | date) :
+            checkKey('operating_circle',1) ==
+            true ? data.operating_circle : checkKey('supplier_name',1) == true ?
+            data.supplier_name :
+            checkKey('receipt_number',1) == true ? data.receipt_number :
+            checkKey('po_number',1)
+            == true ? data.po_number
+            : checkKey('received_date',1) == true ? (data.received_date | date) :
+            checkKey('uploaded_date',1) ==
+            true ? (data.uploaded_date | date) : checkKey('expiring_date',1) == true
+            ?
+            (data.expiring_date | date)
+            : checkKey('label',1) == true ? data.label : data.id}}
+        </span>
+        <!-- ID -->
+    </div>
+
+    <div class="mt-3">
+        <!-- Invoice -->
+        <b>
+
+            <!-- For Value -->
+            {{checkKey('erp_id',2) == true ? data.erp_id : checkKey('id',2) == true
+            ?
+            data.id :
+            checkKey('digitally_signed',2) == true ? (data.digitally_signed == true
+            ?
+            'Digitally Signed' : '') : checkKey('invoice_no',2) == true ?
+            data.invoice_no: checkKey('date',2) == true ? (data.date | date) :
+            checkKey('operating_circle',2) ==
+            true ? data.operating_circle : checkKey('supplier_name',2) == true ?
+            data.supplier_name :
+            checkKey('receipt_number',2) == true ? data.receipt_number :
+            checkKey('po_number',2) == true ? data.po_number
+            : checkKey('received_date',2) == true ? (data.received_date | date) :
+            checkKey('uploaded_date',2) ==
+            true ? (data.uploaded_date | date) : checkKey('expiring_date',2) == true
+            ?
+            (data.expiring_date | date)
+            : checkKey('label',2) == true ? data.label : data.invoice_no ?
+            data.invoice_no :
+            ''}}
+
+
+
+        </b> &nbsp;&nbsp;
+        <!-- Invoice -->
+
+        <!-- Digital Text -->
+        <span class="digitalDesign" [hidden]="ifExist(3,i)">
+            <span class="digitalText">
+
+                <!-- For Value -->
+                {{checkKey('erp_id',3) == true ? data.erp_id : checkKey('id',3) ==
+                true
+                ?
+                data.id :
+                checkKey('digitally_signed',3) == true ? (data.digitally_signed ==
+                true
+                ?
+                'Digitally Signed' : '') : checkKey('invoice_no',3) == true ?
+                data.invoice_no: checkKey('date',3) == true ? (data.date | date) :
+                checkKey('operating_circle',3) ==
+                true ? data.operating_circle : checkKey('supplier_name',3) == true ?
+                data.supplier_name :
+                checkKey('receipt_number',3) == true ? data.receipt_number :
+                checkKey('po_number',3) == true ? data.po_number
+                : checkKey('received_date',3) == true ? (data.received_date | date)
+                :
+                checkKey('uploaded_date',3) ==
+                true ? (data.uploaded_date | date) : checkKey('expiring_date',3) ==
+                true
+                ?
+                (data.expiring_date | date)
+                : checkKey('label',3) == true ? data.label : ''}}
+            </span>
+        </span>
+        <!-- Digital Text -->
+    </div>
+
+    <!-- Date -->
+    <div class="mt-3">
+
+
+        <span>
+            {{checkKey('erp_id',4) == true ? displayValue('erp_id') :
+            checkKey('id',4)
+            ==
+            true ?
+            displayValue('id') :
+            checkKey('digitally_signed',4) == true ?
+            displayValue('digitally_signed') :
+            checkKey('invoice_no',4) == true ?
+            displayValue('invoice_no') : checkKey('date',4) == true ?
+            displayValue('date') :
+            checkKey('operating_circle',4) ==
+            true ? displayValue('operating_circle') : checkKey('supplier_name',4) ==
+            true ?
+            displayValue('supplier_name') :
+            checkKey('receipt_number',4) == true ? displayValue('receipt_number') :
+            checkKey('po_number',4) == true ? displayValue('po_number')
+            : checkKey('received_date',4) == true ? displayValue('received_date') :
+            checkKey('uploaded_date',4) ==
+            true ? displayValue('uploaded_date') : checkKey('expiring_date',4) ==
+            true ?
+            displayValue('expiring_date')
+            : checkKey('label',4) == true ? displayValue('label') : data.date ?
+            'Date' :
+            ''}}
+
+        </span>
+
+
+        <div>
+            {{checkKey('erp_id',4) == true ? data.erp_id : checkKey('id',4) == true
+            ?
+            data.id :
+            checkKey('digitally_signed',4) == true ? (data.digitally_signed == true
+            ?
+            'Digitally
+            Signed' : '') :
+            checkKey('invoice_no',4) == true ?
+            data.invoice_no: checkKey('date',4) == true ? (data.date | date) :
+            checkKey('operating_circle',4) ==
+            true ? data.operating_circle : checkKey('supplier_name',4) == true ?
+            data.supplier_name :
+            checkKey('receipt_number',4) == true ? data.receipt_number :
+            checkKey('po_number',4)
+            == true ? data.po_number
+            : checkKey('received_date',4) == true ? (data.received_date | date) :
+            checkKey('uploaded_date',4) ==
+            true ? (data.uploaded_date | date) : checkKey('expiring_date',4) == true
+            ?
+            (data.expiring_date | date)
+            : checkKey('label',4) == true ? data.label : (data.date | date)}}
+        </div>
+    </div>
+    <!-- Date -->
+    <hr>
+
+    <!-- operating_circle -->
+    <div class="mt-3">
+        <span>
+            {{checkKey('erp_id',5) == true ? displayValue('erp_id') :
+            checkKey('id',5)
+            ==
+            true ?
+            displayValue('id') :
+            checkKey('digitally_signed',5) == true ?
+            displayValue('digitally_signed') :
+            checkKey('invoice_no',5) == true ?
+            displayValue('invoice_no') : checkKey('date',5) == true ?
+            displayValue('date') :
+            checkKey('operating_circle',5) ==
+            true ? displayValue('operating_circle') : checkKey('supplier_name',5) ==
+            true ?
+            displayValue('supplier_name') :
+            checkKey('receipt_number',5) == true ? displayValue('receipt_number') :
+            checkKey('po_number',5) == true ? displayValue('po_number')
+            : checkKey('received_date',5) == true ? displayValue('received_date') :
+            checkKey('uploaded_date',5) ==
+            true ? displayValue('uploaded_date') : checkKey('expiring_date',5) ==
+            true ?
+            displayValue('expiring_date')
+            : checkKey('label',5) == true ? displayValue('label') :
+            data.operating_circle ?
+            'Operating Circle' : ''}}
+
+        </span>
+
+        <div>
+            {{checkKey('erp_id',5) == true ? data.erp_id : checkKey('id',5) == true
+            ?
+            data.id :
+            checkKey('digitally_signed',5) == true ? (data.digitally_signed == true
+            ?
+            'Digitally
+            Signed' : '') :
+            checkKey('invoice_no',5) == true ?
+            data.invoice_no: checkKey('date',5) == true ? (data.date | date) :
+            checkKey('operating_circle',5) ==
+            true ? data.operating_circle : checkKey('supplier_name',5) == true ?
+            data.supplier_name :
+            checkKey('receipt_number',5) == true ? data.receipt_number :
+            checkKey('po_number',5)
+            == true ? data.po_number
+            : checkKey('received_date',5) == true ? (data.received_date | date) :
+            checkKey('uploaded_date',5) ==
+            true ? (data.uploaded_date | date) : checkKey('expiring_date',5) == true
+            ?
+            (data.expiring_date | date)
+            : checkKey('label',5) == true ? data.label : data.operating_circle}}
+        </div>
+    </div>
+    <!-- operating_circle -->
+
+</div>
+
+<div class="col-7 cardBackColor">
+
+    <div class="row">
+        <div class="col-3 mt-4" [hidden]="ifExist(6,i)">
+            <span>
+                {{checkKey('erp_id',6) == true ? displayValue('erp_id') :
+                checkKey('id',6)
+                == true ?
+                displayValue('id') :
+                checkKey('digitally_signed',6) == true ?
+                displayValue('digitally_signed') :
+                checkKey('invoice_no',6) == true ?
+                displayValue('invoice_no') : checkKey('date',6) == true ?
+                displayValue('date') :
+                checkKey('operating_circle',6) ==
+                true ? displayValue('operating_circle') :
+                checkKey('supplier_name',6) ==
+                true ?
+                displayValue('supplier_name') :
+                checkKey('receipt_number',6) == true ?
+                displayValue('receipt_number') :
+                checkKey('po_number',6) == true ? displayValue('po_number')
+                : checkKey('received_date',6) == true ?
+                displayValue('received_date') :
+                checkKey('uploaded_date',6) ==
+                true ? displayValue('uploaded_date') : checkKey('expiring_date',6)
+                ==
+                true ?
+                displayValue('expiring_date')
+                : checkKey('label',6) == true ? displayValue('label') : 'Supplier
+                Name'}}
+
+            </span>
+            <div class="mt-3">
+                <span>
+
+                    {{checkKey('erp_id',6) == true ? data.erp_id : checkKey('id',6)
+                    ==
+                    true
+                    ? data.id :
+                    checkKey('digitally_signed',6) == true ? (data.digitally_signed
+                    ==
+                    true
+                    ? 'Digitally
+                    Signed' : '') :
+                    checkKey('invoice_no',6) == true ?
+                    data.invoice_no: checkKey('date',6) == true ? (data.date | date)
+                    :
+                    checkKey('operating_circle',6) ==
+                    true ? data.operating_circle : checkKey('supplier_name',6) ==
+                    true ?
+                    data.supplier_name :
+                    checkKey('receipt_number',6) == true ? data.receipt_number :
+                    checkKey('po_number',6)
+                    == true ? data.po_number
+                    : checkKey('received_date',6) == true ? (data.received_date |
+                    date)
+                    :
+                    checkKey('uploaded_date',6) ==
+                    true ? (data.uploaded_date | date) : checkKey('expiring_date',6)
+                    ==
+                    true
+                    ?
+                    (data.expiring_date | date)
+                    : checkKey('label',6) == true ? data.label :
+                    data.supplier_name}}
+
+                </span>
+            </div>
+        </div>
+
+        <div class="verticalLine col-1 d-flex mt-4"></div>
+
+        <div class="col-3 mt-4" [hidden]="ifExist(7,i)">
+            <span>
+
+                {{checkKey('erp_id',7) == true ? displayValue('erp_id') :
+                checkKey('id',7)
+                == true ?
+                displayValue('id') :
+                checkKey('digitally_signed',7) == true ?
+                displayValue('digitally_signed') :
+                checkKey('invoice_no',7) == true ?
+                displayValue('invoice_no') : checkKey('date',7) == true ?
+                displayValue('date') :
+                checkKey('operating_circle',7) ==
+                true ? displayValue('operating_circle') :
+                checkKey('supplier_name',7) ==
+                true ?
+                displayValue('supplier_name') :
+                checkKey('receipt_number',7) == true ?
+                displayValue('receipt_number') :
+                checkKey('po_number',7) == true ? displayValue('po_number')
+                : checkKey('received_date',7) == true ?
+                displayValue('received_date') :
+                checkKey('uploaded_date',7) ==
+                true ? displayValue('uploaded_date') : checkKey('expiring_date',7)
+                ==
+                true ?
+                displayValue('expiring_date')
+                : checkKey('label',7) == true ? displayValue('label') : 'Receipt
+                Number'}}
+
+
+            </span>
+            <div class="mt-3">
+                <span>
+                    {{checkKey('erp_id',7) == true ? data.erp_id : checkKey('id',7)
+                    ==
+                    true
+                    ? data.id :
+                    checkKey('digitally_signed',7) == true ? (data.digitally_signed
+                    ==
+                    true
+                    ? 'Digitally
+                    Signed' : '') :
+                    checkKey('invoice_no',7) == true ?
+                    data.invoice_no: checkKey('date',7) == true ? (data.date | date)
+                    :
+                    checkKey('operating_circle',7) ==
+                    true ? data.operating_circle : checkKey('supplier_name',7) ==
+                    true ?
+                    data.supplier_name :
+                    checkKey('receipt_number',7) == true ? data.receipt_number :
+                    checkKey('po_number',7)
+                    == true ? data.po_number
+                    : checkKey('received_date',7) == true ? (data.received_date |
+                    date)
+                    :
+                    checkKey('uploaded_date',7) ==
+                    true ? (data.uploaded_date | date) : checkKey('expiring_date',7)
+                    ==
+                    true
+                    ?
+                    (data.expiring_date | date)
+                    : checkKey('label',7) == true ? data.label :
+                    data.receipt_number}}
+                </span>
+            </div>
+        </div>
+
+        <div class="verticalLine col-1 d-flex mt-4"></div>
+
+        <div class="col-3 mt-4" [hidden]="ifExist(8,i)">
+            <span>
+                {{checkKey('erp_id',8) == true ? displayValue('erp_id') :
+                checkKey('id',8)
+                == true ?
+                displayValue('id') :
+                checkKey('digitally_signed',8) == true ?
+                displayValue('digitally_signed') :
+                checkKey('invoice_no',8) == true ?
+                displayValue('invoice_no') : checkKey('date',8) == true ?
+                displayValue('date') :
+                checkKey('operating_circle',8) ==
+                true ? displayValue('operating_circle') :
+                checkKey('supplier_name',8) ==
+                true ?
+                displayValue('supplier_name') :
+                checkKey('receipt_number',8) == true ?
+                displayValue('receipt_number') :
+                checkKey('po_number',8) == true ? displayValue('po_number')
+                : checkKey('received_date',8) == true ?
+                displayValue('received_date') :
+                checkKey('uploaded_date',8) ==
+                true ? displayValue('uploaded_date') : checkKey('expiring_date',8)
+                ==
+                true ?
+                displayValue('expiring_date')
+                : checkKey('label',8) == true ? displayValue('label') : 'PO
+                Number'}}
+
+            </span>
+            <div class="mt-3">
+                <span>
+                    {{checkKey('erp_id',8) == true ? data.erp_id : checkKey('id',8)
+                    ==
+                    true
+                    ? data.id :
+                    checkKey('digitally_signed',8) == true ? (data.digitally_signed
+                    ==
+                    true
+                    ? 'Digitally
+                    Signed' : '') :
+                    checkKey('invoice_no',8) == true ?
+                    data.invoice_no: checkKey('date',8) == true ? (data.date | date)
+                    :
+                    checkKey('operating_circle',8) ==
+                    true ? data.operating_circle : checkKey('supplier_name',8) ==
+                    true ?
+                    data.supplier_name :
+                    checkKey('receipt_number',8) == true ? data.receipt_number :
+                    checkKey('po_number',8)
+                    == true ? data.po_number
+                    : checkKey('received_date',8) == true ? (data.received_date |
+                    date)
+                    :
+                    checkKey('uploaded_date',8) ==
+                    true ? (data.uploaded_date | date) : checkKey('expiring_date',8)
+                    ==
+                    true
+                    ?
+                    (data.expiring_date | date)
+                    : checkKey('label',8) == true ? data.label : data.po_number}}
+                </span>
+            </div>
+        </div>
+
+        <div class="col-3 mt-4" [hidden]="ifExist(9,i)">
+            <span>
+                {{checkKey('erp_id',9) == true ? displayValue('erp_id') :
+                checkKey('id',9)
+                == true ?
+                displayValue('id') :
+                checkKey('digitally_signed',9) == true ?
+                displayValue('digitally_signed') :
+                checkKey('invoice_no',9) == true ?
+                displayValue('invoice_no') : checkKey('date',9) == true ?
+                displayValue('date') :
+                checkKey('operating_circle',9) ==
+                true ? displayValue('operating_circle') :
+                checkKey('supplier_name',9) ==
+                true ?
+                displayValue('supplier_name') :
+                checkKey('receipt_number',9) == true ?
+                displayValue('receipt_number') :
+                checkKey('po_number',9) == true ? displayValue('po_number')
+                : checkKey('received_date',9) == true ?
+                displayValue('received_date') :
+                checkKey('uploaded_date',9) ==
+                true ? displayValue('uploaded_date') : checkKey('expiring_date',9)
+                ==
+                true ?
+                displayValue('expiring_date')
+                : checkKey('label',9) == true ? displayValue('label') :
+                data.received_date ?
+                'Received Date' : ''}}
+
+            </span>
+            <div class="mt-3">
+                <span>
+                    {{checkKey('erp_id',9) == true ? data.erp_id : checkKey('id',9)
+                    ==
+                    true
+                    ? data.id :
+                    checkKey('digitally_signed',9) == true ? (data.digitally_signed
+                    ==
+                    true
+                    ? 'Digitally
+                    Signed' : '') :
+                    checkKey('invoice_no',9) == true ?
+                    data.invoice_no: checkKey('date',9) == true ? (data.date | date)
+                    :
+                    checkKey('operating_circle',9) ==
+                    true ? data.operating_circle : checkKey('supplier_name',9) ==
+                    true ?
+                    data.supplier_name :
+                    checkKey('receipt_number',9) == true ? data.receipt_number :
+                    checkKey('po_number',9)
+                    == true ? data.po_number
+                    : checkKey('received_date',9) == true ? (data.received_date |
+                    date)
+                    :
+                    checkKey('uploaded_date',9) ==
+                    true ? (data.uploaded_date | date) : checkKey('expiring_date',9)
+                    ==
+                    true
+                    ?
+                    (data.expiring_date | date)
+                    : checkKey('label',9) == true ? data.label : (data.received_date
+                    |
+                    date)}}
+                </span>
+            </div>
+        </div>
+
+        <div class="verticalLine col-1 d-flex mt-4"></div>
+
+        <div class="col-3 mt-4" [hidden]="ifExist(10,i)">
+            <span>
+                {{checkKey('erp_id',10) == true ? displayValue('erp_id') :
+                checkKey('id',10)
+                == true ?
+                displayValue('id') :
+                checkKey('digitally_signed',10) == true ?
+                displayValue('digitally_signed') :
+                checkKey('invoice_no',10) == true ?
+                displayValue('invoice_no') : checkKey('date',10) == true ?
+                displayValue('date') :
+                checkKey('operating_circle',10) ==
+                true ? displayValue('operating_circle') :
+                checkKey('supplier_name',10)
+                ==
+                true ?
+                displayValue('supplier_name') :
+                checkKey('receipt_number',10) == true ?
+                displayValue('receipt_number') :
+                checkKey('po_number',10) == true ? displayValue('po_number')
+                : checkKey('received_date',10) == true ?
+                displayValue('received_date') :
+                checkKey('uploaded_date',10) ==
+                true ? displayValue('uploaded_date') : checkKey('expiring_date',10)
+                ==
+                true
+                ?
+                displayValue('expiring_date')
+                : checkKey('label',10) == true ? displayValue('label') :
+                data.uploaded_date
+                ? 'Uploaded Date' : ''}}
+
+            </span>
+            <div class="mt-3">
+                <span>
+                    {{checkKey('erp_id',10) == true ? data.erp_id :
+                    checkKey('id',10) ==
+                    true ? data.id :
+                    checkKey('digitally_signed',10) == true ? (data.digitally_signed
+                    ==
+                    true
+                    ? 'Digitally
+                    Signed' : '') :
+                    checkKey('invoice_no',10) == true ?
+                    data.invoice_no: checkKey('date',10) == true ? (data.date |
+                    date) :
+                    checkKey('operating_circle',10) ==
+                    true ? data.operating_circle : checkKey('supplier_name',10) ==
+                    true
+                    ?
+                    data.supplier_name :
+                    checkKey('receipt_number',10) == true ? data.receipt_number :
+                    checkKey('po_number',10)
+                    == true ? data.po_number
+                    : checkKey('received_date',10) == true ? (data.received_date |
+                    date)
+                    :
+                    checkKey('uploaded_date',10) ==
+                    true ? (data.uploaded_date | date) :
+                    checkKey('expiring_date',10) ==
+                    true ?
+                    (data.expiring_date | date)
+                    : checkKey('label',10) == true ? data.label :
+                    (data.uploaded_date |
+                    date)}}
+                </span>
+            </div>
+        </div>
+
+        <div class="verticalLine col-1 d-flex mt-4"></div>
+
+        <div class="col-3 mt-4" [hidden]="ifExist(11,i)">
+            <span>
+                {{checkKey('erp_id',11) == true ? displayValue('erp_id') :
+                checkKey('id',11)
+                == true ?
+                displayValue('id') :
+                checkKey('digitally_signed',11) == true ?
+                displayValue('digitally_signed') :
+                checkKey('invoice_no',11) == true ?
+                displayValue('invoice_no') : checkKey('date',11) == true ?
+                displayValue('date') :
+                checkKey('operating_circle',11) ==
+                true ? displayValue('operating_circle') :
+                checkKey('supplier_name',11)
+                ==
+                true ?
+                displayValue('supplier_name') :
+                checkKey('receipt_number',11) == true ?
+                displayValue('receipt_number') :
+                checkKey('po_number',11) == true ? displayValue('po_number')
+                : checkKey('received_date',11) == true ?
+                displayValue('received_date') :
+                checkKey('uploaded_date',11) ==
+                true ? displayValue('uploaded_date') : checkKey('expiring_date',11)
+                ==
+                true
+                ?
+                displayValue('expiring_date')
+                : checkKey('label',11) == true ? displayValue('label') :
+                data.expiring_date
+                ? 'Expiring Date' : ''}}
+
+            </span>
+            <div class="mt-3">
+                <span>
+                    {{checkKey('erp_id',11) == true ? data.erp_id :
+                    checkKey('id',11) ==
+                    true ? data.id :
+                    checkKey('digitally_signed',11) == true ? (data.digitally_signed
+                    ==
+                    true
+                    ? 'Digitally
+                    Signed' : '') :
+                    checkKey('invoice_no',11) == true ?
+                    data.invoice_no: checkKey('date',11) == true ? (data.date |
+                    date) :
+                    checkKey('operating_circle',11) ==
+                    true ? data.operating_circle : checkKey('supplier_name',11) ==
+                    true
+                    ?
+                    data.supplier_name :
+                    checkKey('receipt_number',11) == true ? data.receipt_number :
+                    checkKey('po_number',11)
+                    == true ? data.po_number
+                    : checkKey('received_date',11) == true ? (data.received_date |
+                    date)
+                    :
+                    checkKey('uploaded_date',11) ==
+                    true ? (data.uploaded_date | date) :
+                    checkKey('expiring_date',11) ==
+                    true ?
+                    (data.expiring_date | date)
+                    : checkKey('label',11) == true ? data.label :
+                    ((data.expiring_date |
+                    date))}}
+                </span>
+            </div>
+        </div>
+
+    </div>
+
+</div>

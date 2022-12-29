@@ -1,0 +1,113 @@
+.search {
+    position: absolute;
+    left: 73.19%;
+    right: 25.88%;
+    top: 44.55%;
+    bottom: 41.05%;
+
+    background: #E3E7F1;
+}
+
+
+.inpgrwhitebg {
+    background-color: white;
+}
+
+.borderLeft {
+    border-left: 0;
+}
+
+.borderRight {
+    border-right: 0;
+}
+
+.no-outline:focus {
+    outline: none;
+}
+
+.proceedBtn {
+    box-sizing: border-box;
+    background: #263B73;
+    border: 1px solid #E6EAF5;
+    /* card shadow */
+    box-shadow: 0px 11.8204px 23.6408px rgba(42, 60, 111, 0.102);
+    border-radius: 8px;
+    padding-left: 41px;
+    padding-right: 42px;
+    padding-bottom: 12px;
+    padding-top: 10px;
+}
+
+
+.datepicker {
+    display: inline-flex;
+    position: relative;
+    overflow: clip;
+}
+
+.datepicker:focus-within {
+    outline: black auto 2px;
+}
+
+.datepicker>input[type=date] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.datepicker>input[type=date]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: -150%;
+    left: -150%;
+    width: 300%;
+    height: 300%;
+    cursor: pointer;
+}
+
+
+/* Date picker custom */
+
+.inputColor {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 8px rgba(198, 212, 235, 0.16);
+    border-radius: 8px;
+}
+
+.bgPrimary {
+    background-color: #263B73;
+}
+
+* {
+    background-color: #f5f8ff;
+}
+
+.marginRight {
+    margin-right: 20px;
+}
+
+
+/* @media (min-width:576px) {
+    .widthTo {
+        width: 21%;
+    }
+    .widthFrom {
+        width: 20%;
+    }
+     SM 
+} */
+
+@media screen and (max-width: 991px) and (min-width:768px) {
+    .widthFrom {
+        width: 20%;
+    }
+
+    .widthTo {
+        width: 21%;
+    }
+
+    /* MD */
+}

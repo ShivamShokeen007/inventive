@@ -1,0 +1,64 @@
+<div class="container p-0">
+    <div class="row gx-4">
+        <div class="col-md-3 col-lg-4 col-xl-4 col-xxl-4 p-0">
+            <div class="input-group mb-3 ms-3">
+                <span class="input-group-text inpgrwhitebg borderRight inputColor" id="basic-addon1">
+                    <img src="../../assets/images/searchbar-search.svg" height="20">
+                </span>
+                <input type="text" class="form-control inpgrwhitebg borderLeft no-outline"
+                    placeholder="Search Username, ID, ETC" aria-label="Search Username, ID, ETC"
+                    aria-describedby="basic-addon1">
+            </div>
+        </div>
+
+        <div class="col-md-3 widthTo col-lg-2 col-xl-2 col-xxl-2">
+            <form [formGroup]="toDateForm">
+                <div class="input-group mb-3 ms-3">
+
+                    <input type="text" class="form-control borderRight inputColor" placeholder="To Date"
+                        formControlName="to_date" aria-label="To Date" aria-describedby="basic-addon1">
+
+                    <span class="input-group-text inpgrwhitebg borderLeft" id="basic-addon1">
+
+                        <label class="datepicker">
+                            <img src="../../assets/images/calendar-icon.svg" height="20">
+                            <input type="date" #todate (input)="getSelectedTo(todate,'to')" />
+                        </label>
+                    </span>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-2 widthFrom col-lg-2 col-xl-2 col-xxl-2 p-0">
+            <form [formGroup]="toDateForm">
+                <div class="input-group mb-3 ms-3">
+
+                    <input type="text" class="form-control borderRight inputColor" placeholder="From Date"
+                        formControlName="from_date" aria-label="From Date" aria-describedby="basic-addon1">
+
+                    <span class="input-group-text inpgrwhitebg borderLeft" id="basic-addon1">
+                        <label class="datepicker">
+                            <img src="../../assets/images/calendar-icon.svg" height="20">
+                            <input type="date" #fromdate (input)="getSelectedTo(fromdate,'from')" />
+                        </label>
+                    </span>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+            <div class="input-group mb-3 ms-4">
+                <button type="button" class="btn btn-primary bgPrimary borderLeft">
+                    <img src="../../assets/images/search-trans.svg" height="20" class="bgPrimary">
+                    &nbsp;&nbsp;
+                    Search</button>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-xl-2 col-xxl-2 text-end">
+            <a href="#" class="marginRight">
+                View History
+            </a>
+        </div>
+    </div>
+</div>

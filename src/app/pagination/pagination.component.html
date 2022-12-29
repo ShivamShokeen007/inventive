@@ -1,0 +1,15 @@
+<div>
+    <ul>
+        <li *ngFor="let data of sampleData.slice(0,dataLimit)">
+            {{data.id}} &nbsp; &nbsp; {{data.name}}
+        </li>
+    </ul>
+</div>
+
+<div class="pagination">
+    <a (click)="prevPage()">&laquo;</a>
+    <a (click)="onPage(number,i)" *ngFor="let number of paginationNumber; let i = index" [ngClass]="pageStart == number ? 'active' : ''">
+        {{number}}
+    </a>
+    <a (click)="nextPage()">&raquo;</a>
+</div>

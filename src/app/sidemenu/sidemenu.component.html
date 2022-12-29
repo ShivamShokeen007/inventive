@@ -1,0 +1,73 @@
+<div class="row" *ngIf="!menuToggle">
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <div class="mt-2">
+                    <img src="../../../../assets/images/induslogo.png" height="20" class="img-fluid">
+                </div>
+                <div class="main-div">
+                    <div [ngClass]="navSelected == i ? 'card-selected-test' : 'card-unselected-test'"
+                        *ngFor="let item of navitem;let i = index" (click)="navSelect(i,item.name)">
+                        <span>
+                            <img [src]="navSelected == i ? item.iconTrans : item.icon" class="img-fluid">
+                        </span>
+            
+                        <span class="text-margin">
+                            {{item.name ? item.name : 'N/A'}}
+                        </span>
+                        <hr [ngClass]="navSelected == i ? '' : 'marginR'">
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer d-inline">
+                <div class="row">
+                    <div class="col col-lg-8 col-xl-8 col-xxl-7 ps-lg-1 ps-xl-3 pt-xl-1 text-end">
+                        <small>Powered by</small>
+                    </div>
+                    <div class="col col-lg-4 col-xl-4 col-xxl-5 p-0 text-start">
+                        <img src="../../../../assets/images/footer-menu.svg" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- <div class="page-container">
+    <div class="main-content">
+        <div class="container form-container">
+            <div class="card">
+                <div class="card-body">
+                    <b>This is now full height!</b>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- Collapse Menu -->
+<div class="row" *ngIf="menuToggle">
+    <div class="col">
+        <div class="card">
+            <div class="card-title">
+                <div class="logo-div-small">
+                    <img src="../../../../assets/images/induslogosmall.svg" class="nav-bar-logo img-fluid">
+                </div>
+            </div>
+            <div class="card-body mt-5">
+                <div class="row">
+                    <div class="col cursorPointer">
+                            <div [ngClass]="navSelected == i ? 'card-selected-test-small' : 'card-unselected-test'"
+                                *ngFor="let item of navitem;let i = index" (click)="navSelect(i,item.name)">
+                                <span>
+                                    <img class="image-size-small img-fluid" [src]="navSelected == i ? item.iconTrans : item.icon">
+                                </span>
+                                <hr>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

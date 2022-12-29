@@ -1,0 +1,127 @@
+<section class="rm-overflow sResoluction">
+    <div class="row">
+        <div [ngClass]="menuToggle == 'true' ? 'col-1' : 'col-2'">
+            <app-sidemenu></app-sidemenu>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col-12">
+                    <app-header></app-header>
+                </div>
+                <div class="col-12 mt-3">
+                    <app-worklist-search></app-worklist-search>
+                </div>
+            </div>
+
+            <div class="container p-0">
+                <div class="row">
+                    <div class="col-12 ps-1 padding3">
+
+                        <div class="card mt-4 card-border"
+                            *ngFor="let mainData of mockArray.slice(0,dataLimit); let i = index ">
+
+                            <div class="card-body">
+                                <div class="row">
+
+                                    <div class="col-3">
+                                        <span *ngFor="let display of displayData; let i =index;">
+
+                                            <span
+                                                [ngClass]="display.position == 'left' && display.priority == 0 ? 'erpText' : display.position == 'left' && display.priority == 1 ? 'erpText' : display.position == 'left' &&display.priority == 2 ? 'textBold' : display.position == 'left' && display.priority == 3 && display.data_type == 'boolean' && mainData?.[display?.key] == true ? 'digitalDesign digitalText' : ''"
+                                                *ngIf="display.position == 'left'">
+
+                                                <hr *ngIf="display.priority == 5">
+
+                                                {{display.position == 'left' ? display.priority == 3 &&
+                                                mainData?.[display?.key] ==
+                                                false ? '' :
+                                                display.priority == 2 ? '' : display.value : 'N/A'}}
+
+                                            </span>
+
+                                            <span
+                                                [ngClass]="display.priority == 2 ? 'textBold ' : (display.priority == 0 || display.priority == 1 || display.priority == 2) ? '' : 'd-block mt-1' "
+                                                *ngIf="display.position == 'left'">
+
+                                                {{ display.position == 'left' && display?.key ? display?.data_type ==
+                                                'date' ?
+                                                (mainData?.[display?.key] | date) : display.data_type != 'boolean' ?
+                                                mainData?.[display?.key] : '' : 'N/A'}}
+                                            </span>
+
+                                            <span class="d-block"
+                                                *ngIf="!mainData?.[display?.key] && display.position == 'left'"></span>
+
+                                        </span>
+                                    </div>
+                                    <div class="col-7 cardBackColor">
+                                        <div class="row">
+                                            <div class="col-3 mt-2 ms-5"
+                                                *ngFor="let display of centerDataFilter(displayData); let j =index;">
+
+                                                <div class="row" *ngIf="display.position == 'center'">
+                                                    <div class="col m-0 p-0">
+                                                        <div>
+                                                            {{display?.key ? display.value : 'N/A' }}
+                                                        </div>
+
+                                                        <div>
+                                                            {{ display?.key ? display?.data_type == 'date' ?
+                                                            (mainData?.[display?.key] | date) :
+                                                            mainData?.[display?.key] : 'N/A'}}
+                                                        </div>
+
+                                                        <div *ngIf="!mainData?.[display?.key] "></div>
+                                                    </div>
+
+                                                    <div class="col-1"
+                                                        [ngClass]="((j+1) % 3) == 0 ? '' :'verticalLine'"> </div>
+
+
+
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-2 mt-5">
+
+                                        <div *ngFor="let display of displayData">
+                                            <button class="btn btn-primary proceedBtn" (click)="processF()"
+                                                *ngIf="display.position == 'right'">
+                                                {{display.position == 'right' ? display.value : 'N/A'}}
+                                            </button>
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-12 d-flex justify-content-center mt-4">
+                        <div class="pagination ">
+                            <a (click)="prevPage()" class="cursorPointer">&laquo;</a>
+                            <a (click)="onPage(number,i)" *ngFor="let number of paginationNumber; let i = index"
+                                [ngClass]="pageStart == number ? 'active cursorPointer' : 'cursorPointer'">
+                                {{number}}
+                            </a>
+                            <a (click)="nextPage()" class="cursorPointer">&raquo;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- <app-register [testVariable]="testVariable"></app-register> -->

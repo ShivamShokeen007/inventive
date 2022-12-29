@@ -1,0 +1,315 @@
+.small-box {
+  background: #FFFFFF;
+  /* card shadow */
+  box-shadow: 0px 11.8204px 23.6408px rgba(42, 60, 111, 0.102);
+  border-radius: 10px;
+}
+
+.box {
+  background: #FFFFFF;
+  /* card shadow */
+  box-shadow: 0px 11.8204px 23.6408px rgba(42, 60, 111, 0.102);
+  border-radius: 10px;
+}
+
+
+.logo-div {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 1.54%;
+  bottom: 90.01%;
+}
+
+.logo-div-small {
+  position: absolute;
+  left: 11%;
+  right: 0%;
+  top: 1.54%;
+  bottom: 90.01%;
+}
+
+.nav-bar-logo {
+  position: absolute;
+  left: 16.03%;
+  right: 16.03%;
+  top: 25.07%;
+  bottom: 91.65%;
+  /* background: url(../../../../assets/images/induslogo.png) */
+}
+
+.card-selected {
+  position: absolute;
+  left: 4.2%;
+  right: 3.44%;
+  top: 11.27%;
+  bottom: 81.31%;
+  background: #263B73;
+  /* card shadow */
+  box-shadow: 0px 11.8204px 23.6408px rgba(42, 60, 111, 0.102);
+  border-radius: 10px;
+}
+
+.vector-div {
+  position: absolute;
+  left: 7.25%;
+  right: 83.72%;
+  top: 24.44%;
+  bottom: 83.48%;
+}
+
+.card-text-selected {
+  position: absolute;
+  left: 22.61%;
+  right: 28.92%;
+  top: 31.83%;
+  bottom: 83.87%;
+  /* font-family: 'IBM Plex Sans'; */
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #FFFFFF;
+}
+
+.horizontal-line-worklist {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 27.66%;
+  bottom: 72.34%;
+  opacity: 0.2;
+  border: 0.5px solid #A7A9C0;
+}
+
+.horizontal-line-case {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 36.11%;
+  bottom: 63.89%;
+  opacity: 0.2;
+  border: 0.5px solid #A7A9C0;
+}
+
+.horizontal-line-report {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 45.58%;
+  bottom: 54.42%;
+  opacity: 0.2;
+  border: 0.5px solid #A7A9C0;
+}
+
+.marginR {
+  margin-right: 30px;
+}
+
+.footer {
+  position: absolute;
+  left: 16.03%;
+  right: 15.65%;
+  top: 93.54%;
+  bottom: 2%;
+}
+
+.footer-text {
+  position: absolute;
+  left: 16.03%;
+  right: 46.73%;
+  /* top: 94.12%; */
+  bottom: 2.59%;
+
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 28px;
+  /* or 200% */
+
+
+  /* Text/4 */
+
+  color: #808080;
+}
+
+.footer-img {
+  position: absolute;
+  left: 54.33%;
+  right: 15.65%;
+  /* top: 93.54%; */
+  /* bottom: 96%; */
+}
+
+.main-div{
+  /* margin-top: 20%; */
+  cursor: pointer;
+}
+.card-unselected-test {
+  margin-top: 16%;
+  background: #FFFFFF;
+  border-radius: 10px;
+  margin-left: 9%;
+}
+
+.card-selected-test {
+  margin-top: 16%;
+  margin-right: 7%;
+  padding: 5%;
+  margin-left: 9%;
+  color: white;
+  background: #263B73;
+  /* card shadow */
+
+  box-shadow: 0px 11.8204px 23.6408px rgba(42, 60, 111, 0.102);
+  border-radius: 10px;
+}
+
+
+.card-selected-test-small {
+  margin-top: 16%;
+  color: white;
+  background: #263B73;
+  /* card shadow */
+  box-shadow: 0px 11.8204px 23.6408px rgba(42, 60, 111, 0.102);
+  border-radius: 10px;
+}
+
+.image-size-small {
+  padding-left: 19px;
+    padding-top: 16px;
+    padding-right: 19px;
+}
+
+.vector-div-unselected-test{
+  position: absolute;
+  left: 4.2%;
+  right: 3.44%;
+  top: 19.72%;
+  bottom: 72.86%;
+  background: #FFFFFF;
+  border-radius: 10px;
+}
+
+.text-margin{
+  margin-left: 4%;
+}
+
+
+.card-unselected {
+  position: absolute;
+  left: 4.2%;
+  right: 3.44%;
+  top: 19.72%;
+  bottom: 72.86%;
+  background: #FFFFFF;
+  border-radius: 10px;
+}
+
+.vector-div-unselected {
+  position: absolute;
+  left: 4.2%;
+  right: 3.44%;
+  top: 19.72%;
+  bottom: 72.86%;
+  background: #FFFFFF;
+  border-radius: 10px;
+}
+
+.card-text-blue {
+  position: absolute;
+  left: 22.61%;
+  right: 35.41%;
+  top: 22.28%;
+  bottom: 75.42%;
+  /* font-family: 'IBM Plex Sans'; */
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #263B73;
+}
+
+
+.card-unselected-case-history {
+  position: absolute;
+  left: 4.2%;
+  right: 3.44%;
+  top: 28.17%;
+  bottom: 64.4%;
+
+  background: #FFFFFF;
+  border-radius: 10px;
+}
+
+
+.card-unselected-report {
+  position: absolute;
+  left: 4.2%;
+  right: 3.44%;
+  top: 37.13%;
+  bottom: 55.44%;
+
+  background: #FFFFFF;
+  border-radius: 10px;
+}
+
+.card-unselected-agent-management {
+  position: absolute;
+  left: 4.2%;
+  right: 3.44%;
+  top: 46.61%;
+  bottom: 45.97%;
+  background: #FFFFFF;
+  border-radius: 10px;
+}
+
+.sidebar-footer-img{
+  vertical-align: bottom;
+  height: 40px;
+}
+
+@media (max-width: 1024px) {
+  .sidebar-footer-img {
+    vertical-align: bottom;
+    height: 20px;
+  }
+
+  .footer-text-custom {
+    font-size: 10px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1201px) {
+  .sidebar-footer-img {
+    vertical-align: bottom;
+    height: 28px;
+  }
+
+  .footer-text-custom {
+    color: green;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1201px) {
+  .sidebar-footer-img {
+    vertical-align: bottom;
+    height: 28px;
+  }
+
+  .footer-text-custom {
+    color: blue;
+    text-align: center;
+  }
+}
+
+
+.custom-font-size{
+  font-size: small;
+}
+
+
+
