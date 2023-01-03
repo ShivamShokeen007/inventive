@@ -6,7 +6,7 @@
                 <div class="col-4">
                     <div class="row">
                         <!-- Left -->
-                        <div class="col" *ngFor="let data of leftDisplayData(displayData)">
+                        <div [ngClass]="leftDisplayData(displayData).length > 1 ? 'col-6' : 'col'" *ngFor="let data of leftDisplayData(displayData)">
                             <div class="input-group mb-3 ms-3">
                                 <span class="input-group-text inpgrwhitebg borderRight inputColor" id="basic-addon1">
                                     <img src="../../assets/images/searchbar-search.svg" height="20">
@@ -20,7 +20,7 @@
                     </div>
                 </div>
 
-                <div class="col-6">
+                <div [ngClass]="centerDisplayData(displayData).length > 1 ? 'col-6' : 'col'">
                     <div class="row">
                         <!-- Center -->
                         <div class="col-4" *ngFor="let data of centerDisplayData(displayData)">
@@ -82,7 +82,7 @@
 
                 <div class="col-md-2 col-lg-2 col-xl-2 col-xxl-2 text-end">
                     <!-- Right -->
-                    <div class="col" *ngFor="let data of rightDisplayData(displayData)">
+                    <div class="col-12" *ngFor="let data of rightDisplayData(displayData)">
                         <a href="#" class="marginRight">
                             {{data.label}}
                         </a>
