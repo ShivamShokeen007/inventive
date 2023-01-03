@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WorklistSearchComponent } from './worklist-search.component';
+import { FilterSearchComponent } from './filter-search.component';
 
-describe('WorklistSearchComponent', () => {
-  let component: WorklistSearchComponent;
-  let fixture: ComponentFixture<WorklistSearchComponent>;
+describe('FilterSearchComponent', () => {
+  let component: FilterSearchComponent;
+  let fixture: ComponentFixture<FilterSearchComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WorklistSearchComponent ]
+      declarations: [ FilterSearchComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(WorklistSearchComponent);
+    fixture = TestBed.createComponent(FilterSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

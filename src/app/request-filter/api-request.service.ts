@@ -29,9 +29,6 @@ export class ApiRequestService {
 
     // cookiie acc dns
 
-    headers_custom = headers_custom.append('a-aky', '12345');
-    headers_custom = headers_custom.append('a-aky2', '55555');
-
     if (pass_header && pass_header.length > 0) {
       pass_header.forEach((el: any) => {
         headers_custom = headers_custom.append(el.key, el.value);

@@ -1,0 +1,213 @@
+<div class="container p-0">
+    <div class="row gx-4">
+        <div class="col-12">
+            <div class="row">
+
+                <div class="col-4">
+                    <div class="row">
+                        <!-- Left -->
+                        <div class="col" *ngFor="let data of leftDisplayData(displayData)">
+                            <div class="input-group mb-3 ms-3">
+                                <span class="input-group-text inpgrwhitebg borderRight inputColor" id="basic-addon1">
+                                    <img src="../../assets/images/searchbar-search.svg" height="20">
+                                </span>
+
+                                <input type="text" class="form-control inpgrwhitebg borderLeft no-outline"
+                                    placeholder="{{data.placeholder}}">
+                            </div>
+                        </div>
+                        <!-- Left -->
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="row">
+                        <!-- Center -->
+                        <div class="col-4" *ngFor="let data of centerDisplayData(displayData)">
+                        
+                            <!-- For all date type -->
+                            <div class="input-group mb-3 ms-3" *ngIf="data.type == 'date'">
+                                <input type="text" class="form-control borderRight inputColor" placeholder="{{data.label}}"
+                                 aria-describedby="basic-addon1">
+                        
+                                <span class="input-group-text inpgrwhitebg borderLeft" id="basic-addon1">
+                        
+                                    <label class="datepicker">
+                                        <img src="../../assets/images/calendar-icon.svg" height="20">
+                                        <input type="date" #todate (input)="getSelectedTo(todate,data.key)" />
+                                    </label>
+                                </span>
+                            </div>
+                            <!-- For all date type -->
+
+                            <!-- For all drop-downs -->
+                            <div class="dropdown" *ngIf="data.type == 'dropdown'">
+                            
+                                <button class="btn dropdown-toggle inputColor text-secondary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    {{data.label}}
+                                </button>
+                            
+                            
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" *ngIf="data.data.length > 0">
+                                    <li *ngFor="let option of data.data">
+                                        <a class="dropdown-item" href="#">{{option?.label}}</a>
+                                    </li>
+                                </ul>
+                            
+                            
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" *ngIf="!data.data.length">
+                                    <li>
+                                        <a class="dropdown-item" href="#">{{data?.data?.label}}</a>
+                                    </li>
+                                </ul>
+                            
+                            </div>
+
+                            <!-- For all drop-downs -->
+                        
+                        
+                            <div *ngIf="data.type == 'button'">
+                                <button type="button" class="btn btn-primary bgPrimary" (click)="searchData()"
+                                *ngIf="data.type == 'button'">
+                                <img src="../../assets/images/search-trans.svg" height="20" class="bgPrimary">
+                                &nbsp;&nbsp;
+                                {{data.label}}</button>
+                            </div>
+                        
+                        </div>
+                        <!-- Center -->
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 col-xxl-2 text-end">
+                    <!-- Right -->
+                    <div class="col" *ngFor="let data of rightDisplayData(displayData)">
+                        <a href="#" class="marginRight">
+                            {{data.label}}
+                        </a>
+                    </div>
+                    <!-- Right -->
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div class="col-md-3 widthTo col-lg-2 col-xl-2 col-xxl-2" *ngIf="data.position == 'right'">
+                <div class="input-group mb-3 ms-3">
+                
+                    <input type="text" class="form-control borderRight inputColor" placeholder="To Date" aria-label="To Date"
+                        aria-describedby="basic-addon1">
+                
+                    <span class="input-group-text inpgrwhitebg borderLeft" id="basic-addon1">
+                
+                        <label class="datepicker">
+                            <img src="../../assets/images/calendar-icon.svg" height="20">
+                            <input type="date" #todate (input)="getSelectedTo(todate,'to')" />
+                        </label>
+                    </span>
+                </div>
+            </div> -->
+
+
+
+        <!-- <div class="col">
+            <div class="input-group mb-3 ms-3">
+        
+                <input type="text" class="form-control borderRight inputColor" placeholder="To Date" aria-label="To Date"
+                    aria-describedby="basic-addon1">
+        
+                <span class="input-group-text inpgrwhitebg borderLeft" id="basic-addon1">
+        
+                    <label class="datepicker">
+                        <img src="../../assets/images/calendar-icon.svg" height="20">
+                        <input type="date" #todate (input)="getSelectedTo(todate,'to')" />
+                    </label>
+                </span>
+            </div>
+        </div> -->
+
+        <!-- <div class="col-md-2 col-lg-2 col-xl-2 col-xxl-2 text-end">
+            <a href="#" class="marginRight">
+                View History
+            </a>
+        </div> -->
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container p-0">
+    <div class="row gx-4">
+        <div class="col-md-3 col-lg-4 col-xl-4 col-xxl-4 p-0">
+            <form [formGroup]="toDateForm">
+                <div class="input-group mb-3 ms-3">
+                    <span class="input-group-text inpgrwhitebg borderRight inputColor" id="basic-addon1">
+                        <img src="../../assets/images/searchbar-search.svg" height="20">
+                    </span>
+                    <input type="text" class="form-control inpgrwhitebg borderLeft no-outline"
+                        placeholder="Search Username, ID, ETC" aria-label="Search Username, ID, ETC"
+                        aria-describedby="basic-addon1" formControlName="search">
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-3 widthTo col-lg-2 col-xl-2 col-xxl-2">
+            <form [formGroup]="toDateForm">
+                <div class="input-group mb-3 ms-3">
+
+                    <input type="text" class="form-control borderRight inputColor" placeholder="To Date"
+                        formControlName="to_date" aria-label="To Date" aria-describedby="basic-addon1">
+
+                    <span class="input-group-text inpgrwhitebg borderLeft" id="basic-addon1">
+
+                        <label class="datepicker">
+                            <img src="../../assets/images/calendar-icon.svg" height="20">
+                            <input type="date" #todate (input)="getSelectedTo(todate,'to')" />
+                        </label>
+                    </span>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-2 widthFrom col-lg-2 col-xl-2 col-xxl-2 p-0">
+            <form [formGroup]="toDateForm">
+                <div class="input-group mb-3 ms-3">
+
+                    <input type="text" class="form-control borderRight inputColor" placeholder="From Date"
+                        formControlName="from_date" aria-label="From Date" aria-describedby="basic-addon1">
+
+                    <span class="input-group-text inpgrwhitebg borderLeft" id="basic-addon1">
+                        <label class="datepicker">
+                            <img src="../../assets/images/calendar-icon.svg" height="20">
+                            <input type="date" #fromdate (input)="getSelectedTo(fromdate,'from')" />
+                        </label>
+                    </span>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+            <div class="input-group mb-3 ms-4">
+                <button type="button" class="btn btn-primary bgPrimary borderLeft" (click)="searchData()">
+                    <img src="../../assets/images/search-trans.svg" height="20" class="bgPrimary">
+                    &nbsp;&nbsp;
+                    Search</button>
+            </div> 
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-xl-2 col-xxl-2 text-end">
+            <a href="#" class="marginRight">
+                View History
+            </a>
+        </div>
+    </div>
+</div> -->

@@ -178,6 +178,7 @@ export class WorklistComponent implements OnInit, DoCheck {
     this.toDateForm = this.formBuilder.group({
       to_date: [null],
       from_date: [null],
+      search:[null]
     });
     this.toDateForm.reset();
 
@@ -195,6 +196,25 @@ export class WorklistComponent implements OnInit, DoCheck {
     this.lengthOfRight = getRightLength.length;
     this.mainData = this.data.data;
 
+        // document.cookie = "user_name='1';expires=Sun, 20 Aug 2000 12:00:00 UTC" delete cookie
+
+    let cookiePayload = {
+      token : 'xyz',
+      domain: window.location.host
+    }
+
+
+    document.cookie = "token='xyz';domain=window.location.host";
+
+
+    console.log("cc",document.cookie);
+
+    // console.log("cookie",JSON.parse(JSON.stringify(document.cookie)))
+
+
+    console.log("dns",window.location.host)
+    // let domain = (new URL());
+
     // this.modifyDisplayData();
   }
 
@@ -203,6 +223,9 @@ export class WorklistComponent implements OnInit, DoCheck {
   }
 
   processF() {
+
+
+
     let headerCustom = [];
     headerCustom = [
       {

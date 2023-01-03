@@ -12,8 +12,9 @@ import { HeaderComponent } from './header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { createCustomElement } from '@angular/elements';
 import { KeyValuePipe } from './key-value.pipe';
-import { WorklistSearchComponent } from './worklist-search/worklist-search.component';
+
 import { LazyElementsModule } from '@angular-extensions/elements';
+import { FilterSearchComponent } from './filter-search/filter-search.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { LazyElementsModule } from '@angular-extensions/elements';
     SidemenuComponent,
     HeaderComponent,
     KeyValuePipe,
-    WorklistSearchComponent,
+    FilterSearchComponent,
   ],
   imports: [
     BrowserModule,
