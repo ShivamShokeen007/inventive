@@ -15,6 +15,7 @@ import { KeyValuePipe } from './key-value.pipe';
 
 import { LazyElementsModule } from '@angular-extensions/elements';
 import { FilterSearchComponent } from './filter-search/filter-search.component';
+import { ToastComponent } from './toast/toast.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FilterSearchComponent } from './filter-search/filter-search.component';
     HeaderComponent,
     KeyValuePipe,
     FilterSearchComponent,
+    ToastComponent,
   ],
   imports: [
     BrowserModule,

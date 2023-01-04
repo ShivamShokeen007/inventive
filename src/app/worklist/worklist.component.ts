@@ -249,10 +249,11 @@ export class WorklistComponent implements OnInit, DoCheck {
         value:'23'
       },
     ]
+    // learnify-api.demoserver.in11/api11/
     this.api_request
       .postReq(
-        'https://learnify-api.demoserver.in/api/',
-        'register',
+        'https://test/',
+        'register124',
         { id: 1 },
         'testjson',
         

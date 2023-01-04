@@ -1,107 +1,106 @@
 {
-    "display_data": [
-      {
-        "key": "active",
-        "label": "Active",
-        "placeholder": "Please Select",
-        "type": "dropdown",
-        "condition": "&&",
-        "data": [
-          {
-            "label": "Yes"
-          },
-          {
-            "label": "No"
-          }
-        ],
-        "position": "center",
-        "priority": 8
-      },
-      {
-        "key": "inactive",
-        "label": "In Active",
-        "placeholder": "Please Select",
-        "type": "dropdown",
-        "condition": "&&",
-        "data": [
-          {
-            "label": "Yes Inactive"
-          },
-          {
-            "label": "No Inactive"
-          }
-        ],
-        "position": "center",
-        "priority": 7
-      },
-      {
-        "key": "department",
-        "type": "dropdown",
-        "label": "Select Department",
-        "placeholder": "Please Department",
-        "condition": "&&",
-        "data": {
-          "label": "api/v1"
+  "display_data": [
+    {
+      "key": "active",
+      "label": "Active",
+      "placeholder": "Please Select",
+      "type": "dropdown",
+      "condition": "&&",
+      "data": [
+        {
+          "label": "Yes"
         },
-        "position": "center",
-        "priority": 6
+        {
+          "label": "No"
+        }
+      ],
+      "position": "center",
+      "priority": 8
+    },
+    {
+      "key": "inactive",
+      "label": "In Active",
+      "placeholder": "Please Select",
+      "type": "dropdown",
+      "condition": "&&",
+      "data": [
+        {
+          "label": "Yes Inactive"
+        },
+        {
+          "label": "No Inactive"
+        }
+      ],
+      "position": "center",
+      "priority": 7
+    },
+    {
+      "key": "department",
+      "type": "dropdown",
+      "label": "Select Department",
+      "placeholder": "Please Department",
+      "condition": "&&",
+      "data": {
+        "label": "api/v1"
       },
-      {
-        "key": "button",
-        "label": "Search",
-        "placeholder": "Search",
-        "priority": 9,
-        "position": "center",
-        "type": "button"
-      },
-      {
-        "key": "to_date",
-        "placeholder": "Please Select",
-        "label": "To Date",
-        "priority": 2,
-        "position": "center",
-        "type": "date"
-      },
-      {
-        "key": "from_date",
-        "label": "From Date",
-        "placeholder": "Please Select",
-        "priority": 4,
-        "position": "center",
-        "type": "date"
-      },
-      {
-        "key": "date_range",
-        "label": "Date Range",
-        "placeholder": "Please Select",
-        "priority": 3,
-        "position": "center",
-        "type": "date"
-      },
-      {
-        "key": "search_id",
-        "label": "Search ID",
-        "placeholder": "Please Search ID",
-        "priority": 0,
-        "position": "left",
-        "type": "search"
-      },
-      {
-        "key": "search_name",
-        "label": "Search Name",
-        "placeholder": "Please Search Name",
-        "priority":1,
-        "position": "left",
-        "type": "search"
-      },
-      {
-        "key": "view_history",
-        "label": "View History",
-        "placeholder": "Link",
-        "priority": 5,
-        "position": "right",
-        "type": "string"
-      }
-    ]
-  }
-  
+      "position": "center",
+      "priority": 6
+    },
+    {
+      "key": "button",
+      "label": "Search",
+      "placeholder": "Search",
+      "priority": 9,
+      "position": "center",
+      "type": "button"
+    },
+    {
+      "key": "to_date",
+      "placeholder": "Please Select",
+      "label": "To Date",
+      "priority": 2,
+      "position": "center",
+      "type": "date"
+    },
+    {
+      "key": "from_date",
+      "label": "From Date",
+      "placeholder": "Please Select",
+      "priority": 4,
+      "position": "center",
+      "type": "date"
+    },
+    {
+      "key": "date_range",
+      "label": "Date Range",
+      "placeholder": "Please Select",
+      "priority": 3,
+      "position": "center",
+      "type": "date"
+    },
+    {
+      "key": "search_id",
+      "label": "Search ID",
+      "placeholder": "Please Search ID",
+      "priority": 0,
+      "position": "left",
+      "type": "search"
+    },
+    {
+      "key": "search_name",
+      "label": "Search Name",
+      "placeholder": "Please Search Name",
+      "priority": 7,
+      "position": "left",
+      "type": "search"
+    },
+    {
+      "key": "view_history",
+      "label": "View History",
+      "placeholder": "Link",
+      "priority": 5,
+      "position": "right",
+      "type": "string"
+    }
+  ]
+}
