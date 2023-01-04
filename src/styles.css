@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
+
 .cursorPointer {
     cursor: pointer;
 }
@@ -16,3 +17,4 @@
     box-shadow: 0px 4px 8px rgba(198, 212, 235, 0.16) !important;
     border-radius: 8px !important;
 }
+

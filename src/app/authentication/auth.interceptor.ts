@@ -7,10 +7,11 @@ import {
   HttpErrorResponse,
 } from '@angular/common/http';
 import { catchError, Observable } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor() {}
+  constructor(private toastr: ToastrService) { }
 
   intercept(
     request: HttpRequest<unknown>,
@@ -25,7 +26,7 @@ export class AuthInterceptor implements HttpInterceptor {
     return next.handle(request).pipe(
       catchError((err: any) => {
         if (err instanceof HttpErrorResponse) {
-          console.error(err.message);
+          this.toastr.error(err.message,'Something went wrong');
         }
         return new Observable<HttpEvent<any>>();
       })

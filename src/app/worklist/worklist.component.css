@@ -283,7 +283,7 @@
 }
 
 /* Detect Screen Size */
-.sResoluction {
+/* .sResoluction {
     margin-top: 40px;
 }
 
@@ -339,6 +339,6 @@
     .sResoluction::before {
         content: "XXL";
     }
-}
+} */
 
 /* Detect Screen Size */

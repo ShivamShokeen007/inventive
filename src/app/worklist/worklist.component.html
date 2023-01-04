@@ -1,3 +1,5 @@
+
+
 <section class="rm-overflow sResoluction">
     <div class="row">
         <div [ngClass]="menuToggle == 'true' ? 'col-1' : 'col-2'">
@@ -9,10 +11,12 @@
                     <app-header></app-header>
                 </div>
                 <div class="col-12 mt-3">
-                    <filter-search></filter-search>
-                    <!-- <app-filter-search></app-filter-search> -->
+                    <!-- <filter-search (filterFormValue)="checkData($event)"></filter-search> -->
+                    <app-filter-search (filterFormValue)="checkData($event)"></app-filter-search>
                 </div>
             </div>
+
+            
 
             <div class="container p-0">
                 <div class="row">

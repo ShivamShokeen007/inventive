@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Dashboard",
+    "type": "left",
+    "relative_url": "/dashboard",
+    "sequence": 0,
+    "level": 0,
+    "child_menu_items": [],
+    "icon_url": "",
+    "Icon_trans_url": ""
+  },
+
+  {
+    "id": 3,
+    "name": "Case History",
+    "type": "left",
+    "relative_url": "/case_history",
+    "sequence": 2,
+    "level": 0,
+    "child_menu_items": [],
+    "icon_url": "",
+    "Icon_trans_url": ""
+  },
+  {
+    "id": 2,
+    "name": "Worklist",
+    "type": "left",
+    "relative_url": "/worklist",
+    "sequence": 1,
+    "level": 0,
+    "child_menu_items": [],
+    "icon_url": "",
+    "Icon_trans_url": ""
+  },
+  {
+    "id": 4,
+    "name": "Reports",
+    "type": "left",
+    "relative_url": "/reports",
+    "sequence": 3,
+    "level": 0,
+    "child_menu_items": [],
+    "icon_url": "",
+    "Icon_trans_url": ""
+  },
+  {
+    "id": 5,
+    "name": "Agent Management",
+    "type": "left",
+    "relative_url": "/agent_management",
+    "sequence": 4,
+    "level": 0,
+    "child_menu_items": [],
+    "icon_url": "",
+    "Icon_trans_url": ""
+  }
+]

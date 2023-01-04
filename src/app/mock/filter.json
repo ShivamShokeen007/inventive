@@ -1,7 +1,7 @@
 {
   "display_data": [
     {
-      "key": "active",
+      "filter_field": "active",
       "label": "Active",
       "placeholder": "Please Select",
       "type": "dropdown",
@@ -18,7 +18,7 @@
       "priority": 8
     },
     {
-      "key": "inactive",
+      "filter_field": "inactive",
       "label": "In Active",
       "placeholder": "Please Select",
       "type": "dropdown",
@@ -35,7 +35,7 @@
       "priority": 7
     },
     {
-      "key": "department",
+      "filter_field": "department",
       "type": "dropdown",
       "label": "Select Department",
       "placeholder": "Please Department",
@@ -47,7 +47,7 @@
       "priority": 6
     },
     {
-      "key": "button",
+      "filter_field": "button",
       "label": "Search",
       "placeholder": "Search",
       "priority": 9,
@@ -55,7 +55,7 @@
       "type": "button"
     },
     {
-      "key": "to_date",
+      "filter_field": "to_date",
       "placeholder": "Please Select",
       "label": "To Date",
       "priority": 2,
@@ -63,7 +63,7 @@
       "type": "date"
     },
     {
-      "key": "from_date",
+      "filter_field": "from_date",
       "label": "From Date",
       "placeholder": "Please Select",
       "priority": 4,
@@ -71,7 +71,7 @@
       "type": "date"
     },
     {
-      "key": "date_range",
+      "filter_field": "date_range",
       "label": "Date Range",
       "placeholder": "Please Select",
       "priority": 3,
@@ -79,7 +79,7 @@
       "type": "date"
     },
     {
-      "key": "search_id",
+      "filter_field": "search_id",
       "label": "Search ID",
       "placeholder": "Please Search ID",
       "priority": 0,
@@ -87,7 +87,7 @@
       "type": "search"
     },
     {
-      "key": "search_name",
+      "filter_field": "search_name",
       "label": "Search Name",
       "placeholder": "Please Search Name",
       "priority": 7,
@@ -95,7 +95,7 @@
       "type": "search"
     },
     {
-      "key": "view_history",
+      "filter_field": "view_history",
       "label": "View History",
       "placeholder": "Link",
       "priority": 5,

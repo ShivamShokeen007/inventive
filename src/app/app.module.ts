@@ -16,6 +16,9 @@ import { KeyValuePipe } from './key-value.pipe';
 import { LazyElementsModule } from '@angular-extensions/elements';
 import { FilterSearchComponent } from './filter-search/filter-search.component';
 import { ToastComponent } from './toast/toast.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
   declarations: [
@@ -29,11 +32,14 @@ import { ToastComponent } from './toast/toast.component';
     ToastComponent,
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    LazyElementsModule
+    LazyElementsModule,
+    ToastrModule.forRoot(),
+    BsDatepickerModule
   ],
   providers: [
     {

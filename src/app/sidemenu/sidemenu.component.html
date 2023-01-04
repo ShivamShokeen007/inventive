@@ -9,7 +9,7 @@
                     <div [ngClass]="navSelected == i ? 'card-selected-test' : 'card-unselected-test'"
                         *ngFor="let item of navitem;let i = index" (click)="navSelect(i,item.name)">
                         <span>
-                            <img [src]="navSelected == i ? item.iconTrans : item.icon" class="img-fluid">
+                            <img [src]="navSelected == i ? item.Icon_trans_url : item.icon_url" class="img-fluid">
                         </span>
             
                         <span class="text-margin">
@@ -61,7 +61,7 @@
                             <div [ngClass]="navSelected == i ? 'card-selected-test-small' : 'card-unselected-test'"
                                 *ngFor="let item of navitem;let i = index" (click)="navSelect(i,item.name)">
                                 <span>
-                                    <img class="image-size-small img-fluid" [src]="navSelected == i ? item.iconTrans : item.icon">
+                                    <img class="image-size-small img-fluid" [src]="navSelected == i ? item.Icon_trans_url : item.icon_url">
                                 </span>
                                 <hr>
                             </div>

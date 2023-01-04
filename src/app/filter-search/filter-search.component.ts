@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import * as fitler_mock from '../mock/filter.json';
+import * as fitler_mock from '../mock/worklist.json';
 
 @Component({
   selector: 'app-filter-search',
@@ -9,52 +9,43 @@ import * as fitler_mock from '../mock/filter.json';
   styleUrls: ['./filter-search.component.css'],
 })
 export class FilterSearchComponent {
- 
-  originalData: any = (fitler_mock as any).default; 
+  originalData: any = (fitler_mock as any).default;
   displayData: any = (fitler_mock as any).default;
-  toDateForm: FormGroup;
+  filterObject: any = {};
+
+  @Output() filterFormValue: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.toDateForm = this.formBuilder.group({
-      to_date: [null],
-      from_date: [null],
-      search: [null],
-    });
-    this.toDateForm.reset();
+    this.displayData = this.originalData.display_filter.sort(
+      (p1: any, p2: any) =>
+        p2.priority < p1.priority ? 1 : p2.priority > p1.priority ? -1 : 0
+    );
 
-    this.displayData = this.originalData.display_data.sort((p1: any, p2: any) =>
-    p2.priority < p1.priority ? 1 : p2.priority > p1.priority ? -1 : 0
-  );
-
-    console.log('display', this.displayData);
+    let getKeys = this.displayData.map((v: any) => v.filter_field);
+    if (getKeys && getKeys.length > 0) {
+      for (let i = 0; i < getKeys.length; i++) {
+        Object.assign(this.filterObject, { [getKeys[i]]: null });
+      }
+    }
   }
 
-  getSelectedTo(event: any, type: string) {
-    if (type == 'to') {
-      this.toDateForm?.controls['to_date'].patchValue(event.value);
+  getSelectedTo(event: any, type: any) {
+    if(!event){return}
+    console.log("event",event);
+    console.log("event.value",event.value);
+    if (this.filterObject?.[type] == null) {
+      this.filterObject[type] = event.value;
     } else {
-      this.toDateForm?.controls['from_date'].patchValue(event.value);
+      if (this.filterObject?.[type]) {
+        this.filterObject[type] = event.value;
+      }
     }
   }
 
   searchData() {
-    console.log('data', this.toDateForm.value);
-
-    this.http.post('test', this.toDateForm.value).subscribe({
-      next: (v) => {
-        console.log('data---> ', v);
-      },
-      error: (e) => {
-        console.log('e---->', e);
-      },
-    });
-
-    this.http.get('https://jsonplaceholder.typicode.com/todos').subscribe({
-      next: (v) => console.log('Response', v),
-      error: (e) => console.error('error', e),
-    });
+    this.filterFormValue.emit(this.filterObject);
   }
 
   leftDisplayData(value: any) {

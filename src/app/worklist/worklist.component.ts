@@ -1,10 +1,11 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import type { OnInit, DoCheck } from '@angular/core';
 import * as mock from '../mock/worklist.json';
 import * as old_mock from '../mock/old_worklist.json';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ApiRequestService } from '../request-filter/api-request.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-worklist',
@@ -13,6 +14,8 @@ import { ApiRequestService } from '../request-filter/api-request.service';
 })
 export class WorklistComponent implements OnInit, DoCheck {
   menuToggle: any;
+  //Define  output property
+  // @Output() filterFormValue:EventEmitter<any> =new EventEmitter<any>();
   // mockArray = (old_mock as any).default;
   mockArray = (mock as any).default;
   arraykey: any;
@@ -178,7 +181,7 @@ export class WorklistComponent implements OnInit, DoCheck {
     this.toDateForm = this.formBuilder.group({
       to_date: [null],
       from_date: [null],
-      search:[null]
+      search: [null],
     });
     this.toDateForm.reset();
 
@@ -196,23 +199,20 @@ export class WorklistComponent implements OnInit, DoCheck {
     this.lengthOfRight = getRightLength.length;
     this.mainData = this.data.data;
 
-        // document.cookie = "user_name='1';expires=Sun, 20 Aug 2000 12:00:00 UTC" delete cookie
+    // document.cookie = "user_name='1';expires=Sun, 20 Aug 2000 12:00:00 UTC" delete cookie
 
     let cookiePayload = {
-      token : 'xyz',
-      domain: window.location.host
-    }
-
+      token: 'xyz',
+      domain: window.location.host,
+    };
 
     document.cookie = "token='xyz';domain=window.location.host";
 
-
-    console.log("cc",document.cookie);
+    // console.log('cc', document.cookie);
 
     // console.log("cookie",JSON.parse(JSON.stringify(document.cookie)))
 
-
-    console.log("dns",window.location.host)
+    // console.log('dns', window.location.host);
     // let domain = (new URL());
 
     // this.modifyDisplayData();
@@ -223,41 +223,32 @@ export class WorklistComponent implements OnInit, DoCheck {
   }
 
   processF() {
-
-
-
     let headerCustom = [];
     headerCustom = [
       {
-        key : 'name',
-        value:'Shivam'
+        key: 'name',
+        value: 'Shivam',
       },
       {
-        key : 'name',
-        value:'Abhishek'
+        key: 'name',
+        value: 'Abhishek',
       },
       {
-        key : 'name',
-        value:'Surbhi'
+        key: 'name',
+        value: 'Surbhi',
       },
       {
-        key : 'name',
-        value:'Muskan'
+        key: 'name',
+        value: 'Muskan',
       },
       {
-        key : 'age',
-        value:'23'
+        key: 'age',
+        value: '23',
       },
-    ]
+    ];
     // learnify-api.demoserver.in11/api11/
     this.api_request
-      .postReq(
-        'https://test/',
-        'register124',
-        { id: 1 },
-        'testjson',
-        
-      )
+      .postReq('https://test/', 'register124', { id: 1 }, 'testjson')
       .subscribe((res) => {
         console.log('res', res);
       });
@@ -402,5 +393,9 @@ export class WorklistComponent implements OnInit, DoCheck {
 
   centerDataFilter(data: any) {
     return data.filter((v: any) => v.position == 'center');
+  }
+
+  checkData(DATA: any) {
+    console.log('DATA', DATA);
   }
 }
