@@ -14,7 +14,7 @@
                                 </span>
 
                                 <input type="text" class="form-control inpgrwhitebg borderLeft no-outline"
-                                    placeholder="{{data.placeholder}}">
+                                    placeholder="{{data.placeholder}}" (change)="inputUpdate($event,data.filter_field)">
                             </div>
                         </div>
                         <!-- Left -->
@@ -29,7 +29,7 @@
                             <!-- For all date type -->
                             <div class="input-group mb-3 ms-3" *ngIf="data.type == 'date'">
                                 <input type="text" class="form-control borderRight inputColor"
-                                    placeholder="{{data.label}}" name="{{data.label}}" aria-describedby="basic-addon1"  bsDatepicker #dp="bsDatepicker" (bsValueChange)="getSelectedTo(dp,data.filter_field)">
+                                    placeholder="{{data.label}}" name="{{data.label}}" aria-describedby="basic-addon1"  bsDatepicker #dp="bsDatepicker" (bsValueChange)="getSelectedTo(dp,data.filter_field)" [bsConfig]="bsConfig">
                                 <span class="input-group-text inpgrwhitebg borderLeft" id="basic-addon1">
 
                                     <label class="datepicker">
@@ -45,7 +45,7 @@
 
                             <div class="input-group mb-3 ms-3" *ngIf="data.type == 'date_range'">
                                 <input type="text" class="form-control borderRight inputColor"
-                                    placeholder="{{data.label}}" name="{{data.label}}" aria-describedby="basic-addon1"  bsDaterangepicker  #dpr="bsDaterangepicker" (bsValueChange)="getSelectedTo(dpr,data.filter_field)">
+                                    placeholder="{{data.label}}" name="{{data.label}}" aria-describedby="basic-addon1"  bsDaterangepicker  #dpr="bsDaterangepicker" (bsValueChange)="getSelectedTo(dpr,data.filter_field)" [bsConfig]="bsConfig">
                                 <span class="input-group-text inpgrwhitebg borderLeft" id="basic-addon1">
 
                                     <label class="datepicker">
@@ -62,7 +62,7 @@
                             <!-- For all drop-downs -->
                             <div class="dropdown" *ngIf="data.type == 'dropdown'">
 
-                                <select class="form-select inputColor text-secondary" aria-label="Default select example" (change)="dropdownSelect($event,data.filter_field)">
+                                <select class="form-select inputColor text-secondary" aria-label="Default select example" (change)="inputUpdate($event,data.filter_field)">
                                     <option selected>{{data.label}}</option>
                                     <option *ngFor="let option of data.data">{{option?.label}}</option>
                                 </select>

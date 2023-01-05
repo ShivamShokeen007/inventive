@@ -2,6 +2,8 @@ import { DatePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+import { ToastrService } from 'ngx-toastr';
 import * as fitler_mock from '../mock/worklist.json';
 
 @Component({
@@ -14,9 +16,19 @@ export class FilterSearchComponent {
   displayData: any = (fitler_mock as any).default;
   filterObject: any = {};
 
+  bsConfig?: Partial<BsDatepickerConfig> = Object.assign(
+    {},
+    { containerClass: 'theme-blue' }
+  );
+
   @Output() filterFormValue: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient,public datepipe: DatePipe) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    public datepipe: DatePipe,
+    private toast: ToastrService
+  ) {}
 
   ngOnInit(): void {
     this.displayData = this.originalData.display_filter.sort(
@@ -66,10 +78,10 @@ export class FilterSearchComponent {
       }
     }
 
-    console.log("filterObject",this.filterObject);
+    console.log('filterObject', this.filterObject);
   }
 
-  dropdownSelect(data:any,type:any){
+  inputUpdate(data: any, type: any) {
     if (this.filterObject?.[type] == null) {
       this.filterObject[type] = data.target.value;
     } else {
@@ -78,11 +90,59 @@ export class FilterSearchComponent {
       }
     }
 
-    console.log("filterObject",this.filterObject);
+    console.log('filterObject', this.filterObject);
   }
 
   searchData() {
-    this.filterFormValue.emit(this.filterObject);
+
+    let searchPayload =  this.filterObject;
+    let newPayload = {};
+
+    if (searchPayload) {
+      console.log('searchPayload early', searchPayload);
+
+      delete searchPayload.position;
+      delete searchPayload.view_history;
+
+      console.log('searchPayload', searchPayload);
+
+      this.displayData.forEach((el: any) => {
+        console.log('el', el);
+        if (searchPayload?.[el.filter_field]) {
+          // New Payload
+
+          Object.assign(newPayload, 
+            {
+              [el.filter_field]: {
+                value: searchPayload[el.filter_field],
+                operator: el?.operator,
+              },
+            }
+            );
+
+          // newPayload = {
+          //   [el.filter_field]: {
+          //     value: searchPayload[el.filter_field],
+          //     operator: el?.operator,
+          //   },
+          // };
+          // New Payload
+        }
+      });
+      console.log('newPayload', newPayload);
+
+      this.filterFormValue.emit(newPayload);
+      this.http.post('/search', newPayload).subscribe({
+        next: (v) => {
+          console.log('v', v);
+        },
+        error: (e) => {
+          console.log('e', e);
+        },
+      });
+    }
+
+   
   }
 
   leftDisplayData(value: any) {
