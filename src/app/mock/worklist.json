@@ -292,9 +292,11 @@
       "label": "Select Department",
       "placeholder": "Please Department",
       "condition": "&&",
-      "data": {
-        "label": "api/v1"
-      },
+      "data": [
+        {
+          "label": "api/v1"
+        }
+      ],
       "position": "center",
       "priority": 6
     },
@@ -328,21 +330,13 @@
       "placeholder": "Please Select",
       "priority": 3,
       "position": "center",
-      "type": "date"
+      "type": "date_range"
     },
     {
       "filter_field": "search_id",
       "label": "Search ID",
       "placeholder": "Please Search ID",
       "priority": 0,
-      "position": "left",
-      "type": "search"
-    },
-    {
-      "filter_field": "search_name",
-      "label": "Search Name",
-      "placeholder": "Please Search Name",
-      "priority": 7,
       "position": "left",
       "type": "search"
     },

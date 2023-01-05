@@ -19,6 +19,7 @@ import { ToastComponent } from './toast/toast.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     ReactiveFormsModule,
     LazyElementsModule,
     ToastrModule.forRoot(),
-    BsDatepickerModule
+    BsDatepickerModule,
   ],
   providers: [
     {
@@ -47,6 +48,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
       useClass: AuthInterceptor,
       multi: true,
     },
+    DatePipe
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
@@ -15,7 +16,7 @@ export class FilterSearchComponent {
 
   @Output() filterFormValue: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {}
+  constructor(private formBuilder: FormBuilder, private http: HttpClient,public datepipe: DatePipe) {}
 
   ngOnInit(): void {
     this.displayData = this.originalData.display_filter.sort(
@@ -32,16 +33,52 @@ export class FilterSearchComponent {
   }
 
   getSelectedTo(event: any, type: any) {
-    if(!event){return}
-    console.log("event",event);
-    console.log("event.value",event.value);
-    if (this.filterObject?.[type] == null) {
-      this.filterObject[type] = event.value;
+    if (event._bsValue?.[0]) {
+      console.log('event._bsValue', event._bsValue);
+      let formatDateTo = this.datepipe.transform(
+        event._bsValue[0],
+        'dd/MM/yyyy'
+      );
+      let formatDateFrom = this.datepipe.transform(
+        event._bsValue[1],
+        'dd/MM/yyyy'
+      );
+      let newFormat = [formatDateTo, formatDateFrom];
+
+      if (this.filterObject?.[type] == null) {
+        this.filterObject[type] = newFormat;
+      } else {
+        if (this.filterObject?.[type]) {
+          this.filterObject[type] = newFormat;
+        }
+      }
     } else {
-      if (this.filterObject?.[type]) {
-        this.filterObject[type] = event.value;
+      let formatDate = this.datepipe.transform(event._bsValue, 'dd/MM/yyyy');
+      if (!event._bsValue) {
+        return;
+      }
+      if (this.filterObject?.[type] == null) {
+        this.filterObject[type] = formatDate;
+      } else {
+        if (this.filterObject?.[type]) {
+          this.filterObject[type] = formatDate;
+        }
       }
     }
+
+    console.log("filterObject",this.filterObject);
+  }
+
+  dropdownSelect(data:any,type:any){
+    if (this.filterObject?.[type] == null) {
+      this.filterObject[type] = data.target.value;
+    } else {
+      if (this.filterObject?.[type]) {
+        this.filterObject[type] = data.target.value;
+      }
+    }
+
+    console.log("filterObject",this.filterObject);
   }
 
   searchData() {
