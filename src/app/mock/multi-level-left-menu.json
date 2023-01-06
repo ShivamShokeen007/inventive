@@ -1,0 +1,118 @@
+[
+  {
+    "id": 1,
+    "name": "menu1",
+    "type": "left",
+    "relative_url": "/menu1/",
+    "sequence": 1,
+    "level": 0,
+    "child_menu_items": [],
+    "icon_url": "",
+    "icon_trans_url": ""
+  },
+  {
+    "id": 2,
+    "name": "menu2",
+    "type": "left",
+    "relative_url": "/menu2/",
+    "sequence": 2,
+    "level": 0,
+    "child_menu_items": [
+      {
+        "id": 3,
+        "name": "menu3",
+        "type": "left",
+        "relative_url": "/menu3/",
+        "sequence": 3,
+        "level": 1,
+        "icon_url": "",
+        "icon_trans_url": "",
+        "child_menu_items": [
+          {
+            "id": 4,
+            "name": "menu4",
+            "type": "left",
+            "relative_url": "/menu4/",
+            "sequence": 4,
+            "level": 2,
+            "child_menu_items": [
+              {
+                "id": 5,
+                "name": "menu5",
+                "type": "left",
+                "relative_url": "/menu5/",
+                "sequence": 5,
+                "level": 3,
+                "child_menu_items": [],
+                "icon_url": "",
+                "icon_trans_url": ""
+              }
+            ],
+            "icon_url": "",
+            "icon_trans_url": ""
+          }
+        ]
+      }
+    ],
+    "icon_url": "",
+    "icon_trans_url": ""
+  },
+  {
+    "id": 6,
+    "name": "menu6",
+    "type": "left",
+    "relative_url": "/menu6/",
+    "sequence": 6,
+    "level": 0,
+    "child_menu_items": [],
+    "icon_url": "",
+    "icon_trans_url": ""
+  },
+  {
+    "id": 7,
+    "name": "menu7",
+    "type": "left",
+    "relative_url": "/menu7/",
+    "sequence": 7,
+    "level": 0,
+    "child_menu_items": [
+        {
+          "id": 3,
+          "name": "menu8",
+          "type": "left",
+          "relative_url": "/menu8/",
+          "sequence": 3,
+          "level": 1,
+          "icon_url": "",
+          "icon_trans_url": "",
+          "child_menu_items": [
+            {
+              "id": 4,
+              "name": "menu9",
+              "type": "left",
+              "relative_url": "/menu9/",
+              "sequence": 4,
+              "level": 2,
+              "child_menu_items": [
+                {
+                  "id": 5,
+                  "name": "menu10",
+                  "type": "left",
+                  "relative_url": "/menu5/",
+                  "sequence": 5,
+                  "level": 3,
+                  "child_menu_items": [],
+                  "icon_url": "",
+                  "icon_trans_url": ""
+                }
+              ],
+              "icon_url": "",
+              "icon_trans_url": ""
+            }
+          ]
+        }
+      ],
+    "icon_url": "",
+    "icon_trans_url": ""
+  }
+]

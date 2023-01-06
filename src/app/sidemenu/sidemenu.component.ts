@@ -1,6 +1,7 @@
 import { Component, DoCheck } from '@angular/core';
 import type { OnInit } from '@angular/core';
 import * as sidemenu_mock from '../mock/left-sidemenu.json';
+import * as multi_side_menu_mock from '../mock/multi-level-left-menu.json';
 @Component({
   selector: 'app-sidemenu',
   templateUrl: './sidemenu.component.html',
@@ -8,7 +9,8 @@ import * as sidemenu_mock from '../mock/left-sidemenu.json';
 })
 export class SidemenuComponent implements OnInit, DoCheck {
 
-  navitem: any = (sidemenu_mock as any).default;
+  navitem?: any = (sidemenu_mock as any).default;
+  navitemMulti?: any = (multi_side_menu_mock as any).default;
   // navitem = [
   //   {
   //     name: 'Dashboard',
@@ -39,6 +41,10 @@ export class SidemenuComponent implements OnInit, DoCheck {
   navSelected = 1;
   menuToggle : boolean = false;
 
+  collapseMenu : any= [];
+
+  collapseMenu2 : any= [];
+
   constructor() {}
 
   ngOnInit(): void {
@@ -47,6 +53,31 @@ export class SidemenuComponent implements OnInit, DoCheck {
       (p1: any, p2: any) =>
         p2.sequence < p1.sequence ? 1 : p2.sequence > p1.sequence ? -1 : 0
     );
+
+    this.navitemMulti = this.navitemMulti.sort(
+      (p1: any, p2: any) =>
+        p2.sequence < p1.sequence ? 1 : p2.sequence > p1.sequence ? -1 : 0
+    );
+
+    console.log("this.navitemMulti",this.navitemMulti);
+  }
+
+  menuCollapse(i:number){
+    if(this.collapseMenu[i]){
+      this.collapseMenu[i] = false;
+    }
+    else{
+      this.collapseMenu[i] = true;
+    }
+  }
+
+  menuCollapse2(i:number){
+    if(this.collapseMenu2[i]){
+      this.collapseMenu2[i] = false;
+    }
+    else{
+      this.collapseMenu2[i] = true;
+    }
   }
 
   navSelect(i:number,name:string){

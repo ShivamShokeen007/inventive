@@ -1,12 +1,12 @@
 {
   "count": 2,
   "paginator": {
-      "has_next": true,
-      "has_previous": false,
-      "previous_page_number": null,
-      "current_page_number": 1,
-      "next_page_number": 2,
-      "page_size": 1
+    "has_next": true,
+    "has_previous": false,
+    "previous_page_number": null,
+    "current_page_number": 1,
+    "next_page_number": 2,
+    "page_size": 1
   },
   "data": [
     {
@@ -266,7 +266,6 @@
       "label": "Active",
       "placeholder": "Please Select",
       "type": "dropdown",
-      "condition": "&&",
       "data": [
         {
           "label": "Yes"
@@ -284,7 +283,6 @@
       "label": "In Active",
       "placeholder": "Please Select",
       "type": "dropdown",
-      "condition": "&&",
       "data": [
         {
           "label": "Yes Inactive"
@@ -303,7 +301,8 @@
       "placeholder": "Search",
       "priority": 9,
       "position": "center",
-      "type": "button"
+      "type": "button",
+      "operator": "or"
     },
     {
       "filter_field": "to_date",

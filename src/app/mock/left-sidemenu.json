@@ -8,7 +8,7 @@
     "level": 0,
     "child_menu_items": [],
     "icon_url": "",
-    "Icon_trans_url": ""
+    "icon_trans_url": ""
   },
 
   {
@@ -20,7 +20,7 @@
     "level": 0,
     "child_menu_items": [],
     "icon_url": "",
-    "Icon_trans_url": ""
+    "icon_trans_url": ""
   },
   {
     "id": 2,
@@ -31,7 +31,7 @@
     "level": 0,
     "child_menu_items": [],
     "icon_url": "",
-    "Icon_trans_url": ""
+    "icon_trans_url": ""
   },
   {
     "id": 4,
@@ -42,7 +42,7 @@
     "level": 0,
     "child_menu_items": [],
     "icon_url": "",
-    "Icon_trans_url": ""
+    "icon_trans_url": ""
   },
   {
     "id": 5,
@@ -53,6 +53,6 @@
     "level": 0,
     "child_menu_items": [],
     "icon_url": "",
-    "Icon_trans_url": ""
+    "icon_trans_url": ""
   }
 ]
