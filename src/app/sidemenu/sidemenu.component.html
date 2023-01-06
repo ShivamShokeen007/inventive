@@ -5,6 +5,7 @@
                 <div class="mt-2">
                     <img src="../../../../assets/images/induslogo.png" height="20" class="img-fluid">
                 </div>
+
                 <div class="main-div">
                     <div [ngClass]="navSelected == i ? 'card-selected-test' : 'card-unselected-test'"
                         *ngFor="let item of navitemMulti ;let i = index" (click)="navSelect(i,item.name)">
@@ -12,27 +13,46 @@
                             <img [src]="navSelected == i ? item.icon_trans_url : item.icon_url" class="img-fluid">
                         </span>
 
-                        <span class="text-margin">
+                        <span class="text-margin" (click)="menuCollapse(i)">
                             {{item.name ? item.name : 'N/A'}}
-                          
-                            <i class="fa fa-duotone fa-arrow-down-long text-end" *ngIf="item?.child_menu_items.length > 0" (click)="menuCollapse(i)"></i>
+
+                            <span>
+                                <i [ngClass]="collapseMenu[i] ? 'fa fa-duotone fa-thin fa-angle-down paddingIcon' : 'fa fa-duotone fa-thin fa-angle-right paddingIcon'"
+                                *ngIf="item?.child_menu_items.length > 0" (click)="item!.child_menu_items ? clearCollapse() : null"></i>
+                            </span>
                         </span>
-                        
-                        <div *ngIf="collapseMenu[i]">
+
+                        <div *ngIf="collapseMenu[i]" >
                             <div *ngFor="let menu of item?.child_menu_items">
-                                {{menu?.name}}
-                        
+                                
+                                <span class="navChild2" [routerLink]="menu.relative_url">
+                                    {{menu?.name}}
+                                </span>
+
                                 <!-- 3rd lvl -->
-                                <i class="fa fa-duotone fa-arrow-down-long text-end" *ngIf="menu?.child_menu_items.length > 0"
-                                    (click)="menuCollapse2(i)"></i>
-                        
+                                <i [ngClass]="collapseMenu2[i] ? 'fa fa-duotone fa-thin fa-angle-down paddingIcon2' : 'fa fa-duotone fa-thin fa-angle-right paddingIcon2'"
+                                    *ngIf="menu?.child_menu_items?.length > 0" (click)="menuCollapse2(i)"></i>
+
                                 <div *ngIf="collapseMenu2[i]">
                                     <span *ngFor="let menu2 of menu?.child_menu_items">
-                                        {{menu2?.name}}
-                        
+                                        <span class="navChild3" [routerLink]="menu2.relative_url">
+                                            {{menu2?.name}}
+                                        </span>
+
                                         <!-- 4th lvl -->
 
+                                        <i [ngClass]="collapseMenu3[i] ? 'fa fa-duotone fa-thin fa-angle-down paddingIcon3' : 'fa fa-duotone fa-thin fa-angle-right paddingIcon3'"
+                                            *ngIf="menu2?.child_menu_items?.length > 0" (click)="menuCollapse3(i)"></i>
 
+
+                                        <div *ngIf="collapseMenu3[i]">
+                                            <span *ngFor="let menu3 of menu2?.child_menu_items">
+                                               <span class="navChild4" [routerLink]="menu3.relative_url">
+                                                {{menu3?.name}}
+                                               </span>
+
+                                            </span>
+                                        </div>
                                         <!-- 4th lvl -->
                                     </span>
                                 </div>
@@ -42,14 +62,64 @@
 
 
                             </div>
-                        
-                        
-                        
+
+
+
                         </div>
 
                         <hr [ngClass]="navSelected == i ? '' : 'marginR'">
                     </div>
                 </div>
+
+
+                <!-- <div class="main-div">
+                    <div>
+                        <ng-container *ngTemplateOutlet="Recursion; context:{ list: navitemMulti}"></ng-container>
+                    
+                    
+                        <ng-template #Recursion let-list="list">
+                            <ul style="list-style: none; padding: 0;">
+                                <li *ngFor="let item of list; let i = index">
+                    
+                                    <div [ngClass]="navSelected == item.id ? 'card-selected-test' : 'card-unselected-test'"
+                                        (click)="navSelect(i,item)">
+                    
+                                        <span>
+                                            <img [src]="navSelected== item.id ? item.icon_trans_url : item.icon_url" class="img-fluid">
+                                        </span>
+                    
+                                        <span class="text-margin">
+                                            {{item.name ? item.name : 'N/A'}}
+                    
+                                            <span>
+                                                <i class="fa fa-duotone fa-thin fa-angle-down"
+                                                    *ngIf="item?.child_menu_items.length > 0"></i>
+                                            </span>
+                                        </span>
+                                    </div>
+                    
+                    
+                                    <ul *ngIf="item.child_menu_items && item.child_menu_items.length > 0">
+                    
+                                        <ng-container *ngTemplateOutlet="Recursion; context:{ list: item.child_menu_items }; let j = index;"
+                                            (ngModelChange)="getj(j)"> </ng-container>
+                    
+                    
+                                    </ul>
+                                </li>
+                            </ul>
+                        </ng-template>
+                    
+                    </div>
+
+                </div> -->
+
+
+                
+
+
+              
+
             </div>
             <div class="card-footer d-inline">
                 <div class="row">

@@ -142,10 +142,11 @@
   /* bottom: 96%; */
 }
 
-.main-div{
+.main-div {
   /* margin-top: 20%; */
   cursor: pointer;
 }
+
 .card-unselected-test {
   margin-top: 16%;
   background: #FFFFFF;
@@ -178,11 +179,11 @@
 
 .image-size-small {
   padding-left: 19px;
-    padding-top: 16px;
-    padding-right: 19px;
+  padding-top: 16px;
+  padding-right: 19px;
 }
 
-.vector-div-unselected-test{
+.vector-div-unselected-test {
   position: absolute;
   left: 4.2%;
   right: 3.44%;
@@ -192,7 +193,7 @@
   border-radius: 10px;
 }
 
-.text-margin{
+.text-margin {
   margin-left: 4%;
 }
 
@@ -265,7 +266,7 @@
   border-radius: 10px;
 }
 
-.sidebar-footer-img{
+.sidebar-footer-img {
   vertical-align: bottom;
   height: 40px;
 }
@@ -307,9 +308,30 @@
 }
 
 
-.custom-font-size{
+.custom-font-size {
   font-size: small;
 }
 
+.navChild2 {
+  padding-left: 28px;
+}
 
+.navChild3 {
+  padding-left: 41px;
+}
 
+.navChild4 {
+  padding-left: 53px;
+}
+
+.paddingIcon {
+  padding-left: 43px;
+}
+
+.paddingIcon2 {
+  padding-left: 22px;
+}
+
+.paddingIcon3 {
+  padding-left: 7px;
+}
