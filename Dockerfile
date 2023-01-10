@@ -13,7 +13,7 @@ RUN npm run build
 
 FROM nginx:alpine
 COPY --from=node /app/dist/sample /usr/share/nginx/html
-
+# Don't need to create dist folder in the app, it will get it from dockerfolder based on build command
 # docker run --rm -d -p 4900:80/tcp sample9:latest
 
 
