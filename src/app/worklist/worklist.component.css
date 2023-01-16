@@ -282,6 +282,18 @@
     background-color: #f5f8ff;
 }
 
+.textBold{
+    font-weight: bold;
+}
+
+.erpTexttest{
+    background-color: red;
+}
+
+.noContent::before {
+    content: 'N/A';
+}
+
 /* Detect Screen Size */
 /* .sResoluction {
     margin-top: 40px;
@@ -298,18 +310,10 @@
 
 }
 
-.erpTexttest{
-    background-color: red;
-}
-
-.noContent::before {
-    content: 'N/A';
-}
 
 
-.textBold{
-    font-weight: bold;
-}
+
+
 
 @media (min-width:576px) {
     .sResoluction::before {
