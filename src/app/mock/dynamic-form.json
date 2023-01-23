@@ -1,0 +1,105 @@
+[
+  {
+    "control_name":"first_name",
+    "label": "First Name",
+    "type": "string",
+    "validation": "required",
+    "placeholder": "Enter First Name"
+  },
+  {
+    "control_name":"last_name",
+    "label": "Last Name",
+    "type": "string",
+    "validation": "required",
+    "placeholder": "Enter Last Name"
+  },
+  {
+    "control_name":"phone_number",
+    "label": "Phone Number",
+    "type": "number",
+    "validation": "required",
+    "placeholder": "Enter Phone Number"
+  },
+  {
+    "control_name":"date",
+    "label": "Date",
+    "type": "date",
+    "validation": "required",
+    "placeholder": "Select a Date"
+  },
+  {
+    "control_name":"grade",
+    "label": "Grade",
+    "type": "select",
+    "options": [
+      {
+        "label": "Grade 1"
+      },
+      {
+        "label": "Grade 2"
+      }
+    ],
+    "validation": "required",
+    "placeholder": "Select a Grade"
+  },
+  {
+    "control_name":"country_url",
+    "label": "Country URL",
+    "type": "select",
+    "options_url": "https://restcountries.com/v3.1/all",
+    "validation": "required",
+    "placeholder": "Select a Country URL"
+  },
+  {
+    "control_name":"gender_url",
+    "label": "Gender URL",
+    "type": "radio",
+    "options_url": "https://restcountries.com/v3.1/all",
+    "validation": "required",
+    "placeholder": "Select a Gender URL"
+  },
+  {
+    "control_name":"gender",
+    "label": "Gender",
+    "type": "radio",
+    "options": [
+      {
+        "label": "Male"
+      },
+      {
+        "label": "Female"
+      },
+      {
+        "label": "Other"
+      }
+    ],
+    "validation": "required",
+    "placeholder": "Choose a Gender"
+  },
+  {
+    "control_name":"gender_checkbox_url",
+    "label": "Gender checkbox URL",
+    "type": "checkbox",
+    "options_url": "https://restcountries.com/v3.1/all",
+    "validation": "required",
+    "placeholder": "Choose a Gender checkbox URL"
+  },
+  {
+    "control_name":"gender_checkbox",
+    "label": "Gender checkbox",
+    "type": "checkbox",
+    "options": [
+      {
+        "label": "Male"
+      },
+      {
+        "label": "Female"
+      },
+      {
+        "label": "Other"
+      }
+    ],
+    "validation": "required",
+    "placeholder": "Choose a Gender checkbox"
+  }
+]

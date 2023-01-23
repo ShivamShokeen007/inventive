@@ -1,0 +1,53 @@
+<p>dynamic-form works!</p>
+
+
+<form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+
+    <!-- <p>
+      <label for="firstname">First Name </label>
+      <input type="text" id="firstname" name="firstname" formControlName="first_name">
+    </p>
+   
+    <p>
+      <label for="lastname">Last Name </label>
+      <input type="text" id="lastname" name="lastname" formControlName="last_name">
+    </p> -->
+
+    <ng-container *ngFor="let cont of dynamicJSON">
+        <div *ngIf="cont.type == 'string' || cont.type == 'number'">
+            <span *ngIf="cont.label">{{cont.label}}</span>
+            <input type="{{cont.type}}" placeholder="{{cont.placeholder}}" formControlName="{{cont.control_name}}">
+        </div>
+
+        <div *ngIf="cont.type == 'date'">
+            <span *ngIf="cont.label">{{cont.label}}</span>
+            <input type="{{cont.type}}" placeholder="{{cont.placeholder}}" formControlName="{{cont.control_name}}">
+        </div>
+
+
+        <div *ngIf="cont.type == 'select'">
+            <span *ngIf="cont.label">{{cont.label}}</span>
+
+            <select id="exampleFormControlSelect1" formControlName="{{cont.control_name}}" *ngIf="!cont.options_url">
+                <option disabled>{{cont.placeholder}}</option>
+                <!-- <option *ngFor="let header of groupChatHeaderList" [value]="header.id">{{header.header_name}}
+                        </option> -->
+                <option *ngFor="let option of cont.options">
+                    {{option.label}}
+                </option>
+            </select>
+
+
+
+            <select id="exampleFormControlSelect2" formControlName="{{cont.control_name}}" *ngIf="cont.options_url">
+                <option disabled>{{cont.placeholder}}1</option>
+                <option *ngFor="let option of cont?.options">
+                     {{option.name.common}}
+                </option>
+            </select>
+        </div>
+
+    </ng-container>
+
+    <button type="submit">Save</button>
+</form>
