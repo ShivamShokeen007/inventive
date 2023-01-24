@@ -50,26 +50,22 @@
     "validation": "required",
     "placeholder": "Select a Country URL"
   },
-  {
-    "control_name":"gender_url",
-    "label": "Gender URL",
-    "type": "radio",
-    "options_url": "https://restcountries.com/v3.1/all",
-    "validation": "required",
-    "placeholder": "Select a Gender URL"
-  },
+  
   {
     "control_name":"gender",
     "label": "Gender",
     "type": "radio",
     "options": [
       {
+        "value":"male",
         "label": "Male"
       },
       {
+        "value":"female",
         "label": "Female"
       },
       {
+        "value":"other",
         "label": "Other"
       }
     ],
@@ -77,26 +73,21 @@
     "placeholder": "Choose a Gender"
   },
   {
-    "control_name":"gender_checkbox_url",
-    "label": "Gender checkbox URL",
-    "type": "checkbox",
-    "options_url": "https://restcountries.com/v3.1/all",
-    "validation": "required",
-    "placeholder": "Choose a Gender checkbox URL"
-  },
-  {
     "control_name":"gender_checkbox",
     "label": "Gender checkbox",
     "type": "checkbox",
     "options": [
       {
-        "label": "Male"
+        "value":"red",
+        "label": "Red"
       },
       {
-        "label": "Female"
+        "value":"blue",
+        "label": "Blue"
       },
       {
-        "label": "Other"
+        "value":"green",
+        "label": "Green"
       }
     ],
     "validation": "required",

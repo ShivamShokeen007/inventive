@@ -43,15 +43,14 @@ export class DynamicFormComponent {
     // Get data from URL OPTIONS
 
     this.dynamicJSON.forEach(async (v: any) => {
-      if (v.options_url) {
+      if (v.options_url && v.type == "select") {
         v['options'] = await this.asyncData(v.options_url);
       }
     });
 
     // Get data from URL OPTIONS
 
-    console.log('this.dynamicForm', this.dynamicForm.value);
-    console.log('dynamicJSON', this.dynamicJSON);
+    console.log("dynamicJSON",this.dynamicJSON);
   }
 
   onSubmit() {
@@ -61,7 +60,6 @@ export class DynamicFormComponent {
   asyncData(URL: string) {
     return new Promise((resolve) => {
       this.http.get(URL).subscribe((v) => {
-        console.log('v', v);
         resolve(v);
       });
     });

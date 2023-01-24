@@ -1,53 +1,174 @@
-<p>dynamic-form works!</p>
+<div class="container">
+    <div class="row">
+
+        <div class="col-6">
+            <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+                <ng-container *ngFor="let cont of dynamicJSON">
+
+                    <!-- String & Number -->
+                    <div *ngIf="cont.type == 'string' || cont.type == 'number'">
+                        <label *ngIf="cont.label" class="form-label">{{cont.label}}</label>
+                        <input class="form-control" type="{{cont.type}}" placeholder="{{cont.placeholder}}"
+                            formControlName="{{cont.control_name}}">
+                    </div>
+                    <!-- String & Number -->
+
+                    <!-- Single Date -->
+                    <div *ngIf="cont.type == 'date'">
+                        <label class="form-label" *ngIf="cont.label">{{cont.label}}</label>
+                        <input class="form-control" type="{{cont.type}}" placeholder="{{cont.placeholder}}"
+                            formControlName="{{cont.control_name}}">
+                    </div>
+                    <!-- Single Date -->
+
+                    <!-- Select Dropdown -->
+                    <div *ngIf="cont.type == 'select'">
+                        <label *ngIf="cont.label" class="form-label">{{cont.label}}</label>
+
+                        <select class="form-select" formControlName="{{cont.control_name}}" *ngIf="!cont.options_url">
+                            <option disabled>{{cont.placeholder}}</option>>
+                            <option *ngFor="let option of cont.options">
+                                {{option.label}}
+                            </option>
+                        </select>
 
 
-<form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
 
-    <!-- <p>
-      <label for="firstname">First Name </label>
-      <input type="text" id="firstname" name="firstname" formControlName="first_name">
-    </p>
-   
-    <p>
-      <label for="lastname">Last Name </label>
-      <input type="text" id="lastname" name="lastname" formControlName="last_name">
-    </p> -->
+                        <select class="form-select" formControlName="{{cont.control_name}}" *ngIf="cont.options_url">
+                            <option disabled>{{cont.placeholder}}1</option>
+                            <option *ngFor="let option of cont?.options">
+                                {{option.name.common}}
+                            </option>
+                        </select>
+                    </div>
+                    <!-- Select Dropdown -->
 
-    <ng-container *ngFor="let cont of dynamicJSON">
-        <div *ngIf="cont.type == 'string' || cont.type == 'number'">
-            <span *ngIf="cont.label">{{cont.label}}</span>
-            <input type="{{cont.type}}" placeholder="{{cont.placeholder}}" formControlName="{{cont.control_name}}">
+
+                    <!-- Radio & Checkbox -->
+
+                    <div *ngIf="cont.type == 'radio' || cont.type == 'checkbox'">
+
+                        <div>
+                            <label class="form-label">{{cont.label}}</label>
+                        </div>
+                        <!-- With options -->
+
+                        <div *ngIf="cont.type == 'radio'">
+                            <div *ngFor="let option of cont?.options;" class="form-check">
+
+                                <input class="form-check-input" type="radio" [value]="option.value"
+                                    formControlName="{{cont.control_name}}" id="{{ option.label }}">
+
+                                <label for="{{ option.label }}" class="form-check-label">{{ option.label }}</label>
+                            </div>
+                        </div>
+
+                        <div *ngIf="cont.type == 'checkbox'">
+                            <div *ngFor="let option of cont?.options;" class="form-check">
+                                <input class="form-check-input" type="checkbox" [value]="option.value"
+                                    formControlName="{{cont.control_name}}" id="{{ option.label }}">
+
+                                <label for="{{ option.label }}" class="form-check-label">{{ option.label }}</label>
+                            </div>
+                        </div>
+
+
+                        <!-- With options -->
+
+
+                    </div>
+
+                    <!-- Radio & Checkbox -->
+
+                </ng-container>
+
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
         </div>
 
-        <div *ngIf="cont.type == 'date'">
-            <span *ngIf="cont.label">{{cont.label}}</span>
-            <input type="{{cont.type}}" placeholder="{{cont.placeholder}}" formControlName="{{cont.control_name}}">
+        <div class="col-6">
+            <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+                <ng-container *ngFor="let cont of dynamicJSON">
+
+                    <!-- String & Number -->
+                    <div *ngIf="cont.type == 'string' || cont.type == 'number'">
+                        <label *ngIf="cont.label" class="form-label">{{cont.label}}</label>
+                        <input class="form-control" type="{{cont.type}}" placeholder="{{cont.placeholder}}"
+                            formControlName="{{cont.control_name}}">
+                    </div>
+                    <!-- String & Number -->
+
+                    <!-- Single Date -->
+                    <div *ngIf="cont.type == 'date'">
+                        <label class="form-label" *ngIf="cont.label">{{cont.label}}</label>
+                        <input class="form-control" type="{{cont.type}}" placeholder="{{cont.placeholder}}"
+                            formControlName="{{cont.control_name}}">
+                    </div>
+                    <!-- Single Date -->
+
+                    <!-- Select Dropdown -->
+                    <div *ngIf="cont.type == 'select'">
+                        <label *ngIf="cont.label" class="form-label">{{cont.label}}</label>
+
+                        <select class="form-select" formControlName="{{cont.control_name}}" *ngIf="!cont.options_url">
+                            <option disabled>{{cont.placeholder}}</option>>
+                            <option *ngFor="let option of cont.options">
+                                {{option.label}}
+                            </option>
+                        </select>
+
+
+
+                        <select class="form-select" formControlName="{{cont.control_name}}" *ngIf="cont.options_url">
+                            <option disabled>{{cont.placeholder}}1</option>
+                            <option *ngFor="let option of cont?.options">
+                                {{option.name.common}}
+                            </option>
+                        </select>
+                    </div>
+                    <!-- Select Dropdown -->
+
+
+                    <!-- Radio & Checkbox -->
+
+                    <div *ngIf="cont.type == 'radio' || cont.type == 'checkbox'">
+
+                        <div>
+                            <label class="form-label">{{cont.label}}</label>
+                        </div>
+                        <!-- With options -->
+
+                        <div *ngIf="cont.type == 'radio'">
+                            <div *ngFor="let option of cont?.options;" class="form-check">
+
+                                <input class="form-check-input" type="radio" [value]="option.value"
+                                    formControlName="{{cont.control_name}}" id="{{ option.label }}">
+
+                                <label for="{{ option.label }}" class="form-check-label">{{ option.label }}</label>
+                            </div>
+                        </div>
+
+                        <div *ngIf="cont.type == 'checkbox'">
+                            <div *ngFor="let option of cont?.options;" class="form-check">
+                                <input class="form-check-input" type="checkbox" [value]="option.value"
+                                    formControlName="{{cont.control_name}}" id="{{ option.label }}">
+
+                                <label for="{{ option.label }}" class="form-check-label">{{ option.label }}</label>
+                            </div>
+                        </div>
+
+
+                        <!-- With options -->
+
+
+                    </div>
+
+                    <!-- Radio & Checkbox -->
+
+                </ng-container>
+
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
         </div>
-
-
-        <div *ngIf="cont.type == 'select'">
-            <span *ngIf="cont.label">{{cont.label}}</span>
-
-            <select id="exampleFormControlSelect1" formControlName="{{cont.control_name}}" *ngIf="!cont.options_url">
-                <option disabled>{{cont.placeholder}}</option>
-                <!-- <option *ngFor="let header of groupChatHeaderList" [value]="header.id">{{header.header_name}}
-                        </option> -->
-                <option *ngFor="let option of cont.options">
-                    {{option.label}}
-                </option>
-            </select>
-
-
-
-            <select id="exampleFormControlSelect2" formControlName="{{cont.control_name}}" *ngIf="cont.options_url">
-                <option disabled>{{cont.placeholder}}1</option>
-                <option *ngFor="let option of cont?.options">
-                     {{option.name.common}}
-                </option>
-            </select>
-        </div>
-
-    </ng-container>
-
-    <button type="submit">Save</button>
-</form>
+    </div>
+</div>
